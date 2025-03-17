@@ -25,9 +25,6 @@ export function Hero() {
     <section id="home" className="relative pt-24 pb-12 md:pt-32 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-block mb-4 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium animate-fade-in">
-            Software Engineer & Developer
-          </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
             Hey! I'm Rajkumar Pawar
@@ -101,12 +98,12 @@ export function Hero() {
       </div>
       
       {/* Add custom keyframes for scale-bounce animation */}
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes scale-bounce {
           0%, 100% { transform: scale(1); }
           50% { transform: scale(1.1); }
         }
-      `}</style>
+      `}} />
       
       {/* Decorative elements */}
       <div className="absolute top-1/4 left-8 w-24 h-24 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
