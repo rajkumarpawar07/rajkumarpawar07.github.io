@@ -1,8 +1,26 @@
 
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 export function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const roles = ["backend", "mobile", "cloud", "devops"];
+  const roleColors = {
+    backend: "text-blue-500",
+    mobile: "text-purple-500",
+    cloud: "text-cyan-500",
+    devops: "text-green-500"
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+    }, 2000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="relative pt-24 pb-12 md:pt-32 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4">
@@ -11,17 +29,31 @@ export function Hero() {
             Software Engineer & Developer
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up">
-            Crafting Digital Experiences with Code & Creativity
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
+            Hey! I'm Rajkumar Pawar
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-slide-up animation-delay-100">
-            Hi, I'm a passionate software engineer who transforms ideas into elegant, 
-            efficient solutions. I specialize in building modern web applications with
-            cutting-edge technologies.
+          <div className="flex justify-center items-center mb-6 text-2xl md:text-3xl animate-slide-up animation-delay-100">
+            <span className="mr-2">I'm</span>
+            <span 
+              className={`font-bold transition-all duration-500 ${roleColors[roles[roleIndex]]}`}
+              key={roleIndex}
+              style={{ 
+                animation: "scale-bounce 2s infinite",
+                display: "inline-block" 
+              }}
+            >
+              {roles[roleIndex]}
+            </span>
+            <span className="ml-2">engineer</span>
+          </div>
+          
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-slide-up animation-delay-200">
+            I specialize in building modern, scalable solutions with
+            cutting-edge technologies, turning complex problems into elegant solutions.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up animation-delay-200">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up animation-delay-300">
             <Button className="anime-button min-w-[160px]" asChild>
               <a href="#projects">
                 View Projects
@@ -34,7 +66,7 @@ export function Hero() {
             </Button>
           </div>
           
-          <div className="flex items-center justify-center gap-6 animate-fade-in animation-delay-300">
+          <div className="flex items-center justify-center gap-6 animate-fade-in animation-delay-400">
             <a 
               href="https://github.com" 
               target="_blank" 
@@ -67,6 +99,14 @@ export function Hero() {
           </div>
         </div>
       </div>
+      
+      {/* Add custom keyframes for scale-bounce animation */}
+      <style jsx>{`
+        @keyframes scale-bounce {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+        }
+      `}</style>
       
       {/* Decorative elements */}
       <div className="absolute top-1/4 left-8 w-24 h-24 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
