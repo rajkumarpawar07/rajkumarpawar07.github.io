@@ -50,8 +50,8 @@ export function About() {
             About Me
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 font-anime">
-            My Journey
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 font-anime text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+            Code, Cloud & Scalability – My Passion, Your Solution
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -96,7 +96,7 @@ export function About() {
                 {skills.map((skill, index) => (
                   <div 
                     key={index} 
-                    className="flex items-center gap-3 p-4 rounded-lg border border-border transition-all hover:border-accent/50 hover:bg-accent/5"
+                    className="flex items-center gap-3 p-4 rounded-lg border border-border bg-card/60 backdrop-blur-sm transition-all hover:border-accent/50 hover:bg-accent/5"
                   >
                     <div className="flex items-center justify-center h-10 w-10 rounded-full bg-accent/10 text-accent">
                       {skill.icon}

@@ -4,68 +4,55 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 export function Hero() {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [typedText, setTypedText] = useState("");
-  const [isTyping, setIsTyping] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(true);
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "Full-Stack Developer with Cloud Engineering & DevOps Expertise";
+  const animationSpeed = 50; // ms per character
   
-  const roles = ["backend", "mobile", "cloud", "devops"];
-  const roleColors = {
-    backend: "text-blue-500",
-    mobile: "text-purple-500",
-    cloud: "text-cyan-500",
-    devops: "text-green-500"
-  };
-
-  // Role cycling effect
+  // Typing animation effect
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
-      setTypedText("");
-      setIsTyping(true);
-    }, 4000);
+    if (!isAnimating) return;
     
-    return () => clearInterval(interval);
-  }, []);
-
-  // Typewriter effect
-  useEffect(() => {
-    if (!isTyping) return;
-    
-    const currentRole = roles[roleIndex];
-    const text = `I'm ${currentRole} engineer`;
-    
-    if (typedText.length < text.length) {
+    if (displayText.length < fullText.length) {
       const timeout = setTimeout(() => {
-        setTypedText(text.substring(0, typedText.length + 1));
-      }, 100);
+        setDisplayText(fullText.substring(0, displayText.length + 1));
+      }, animationSpeed);
       
       return () => clearTimeout(timeout);
     } else {
-      setIsTyping(false);
+      // Once typing is complete, wait before starting over
+      const timeout = setTimeout(() => {
+        setDisplayText("");
+      }, 3000);
+      
+      return () => clearTimeout(timeout);
     }
-  }, [typedText, roleIndex, isTyping]);
+  }, [displayText, isAnimating]);
+
+  // Start animation when component mounts
+  useEffect(() => {
+    setIsAnimating(true);
+    return () => setIsAnimating(false);
+  }, []);
 
   return (
     <section id="home" className="relative pt-24 pb-12 md:pt-32 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-slide-up font-anime">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up font-anime">
             Rajkumar Pawar
           </h1>
           
-          <div className="flex justify-center items-center mb-6 text-xl md:text-2xl animate-slide-up animation-delay-100">
-            <span 
-              className={`font-bold transition-all duration-500 ${roleColors[roles[roleIndex]]} font-anime`}
-              key={roleIndex}
-            >
-              {typedText}
+          <div className="flex justify-center items-center mb-8 text-xl md:text-2xl animate-slide-up animation-delay-100">
+            <span className="font-bold transition-all duration-300 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 font-anime">
+              {displayText}
               <span className="animate-pulse">|</span>
             </span>
           </div>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-slide-up animation-delay-200">
-            Building the Future with Code & Cloud
+          <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 font-bold mb-8 max-w-2xl mx-auto animate-slide-up animation-delay-200 font-anime">
+            Code, Cloud & Scalability – My Passion, Your Solution
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up animation-delay-300">
