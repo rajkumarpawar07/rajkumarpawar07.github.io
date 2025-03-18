@@ -1,6 +1,6 @@
 
 import { useRef, useEffect } from "react";
-import { Check, Code, Database, Layout, Layers, Server } from "lucide-react";
+import { Code, Database, Layout, Layers, Server } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export function About() {
@@ -46,18 +46,18 @@ export function About() {
     >
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="inline-block mb-4 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
+          <div className="inline-block mb-4 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium font-anime">
             About Me
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Building the Future with Code
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 font-anime">
+            My Journey
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="flex flex-col items-center md:items-start">
               <div className="mb-6 relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-accent to-accent/50 rounded-full blur-md opacity-70 animate-pulse"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full blur-md opacity-70 animate-pulse"></div>
                 <Avatar className="h-40 w-40 border-4 border-background relative">
                   <AvatarImage 
                     src="/lovable-uploads/ec25773d-152e-4ee7-a4da-051fabdfae5f.png" 
@@ -68,21 +68,21 @@ export function About() {
                 </Avatar>
               </div>
               
-              <p className="text-muted-foreground mb-6 text-center md:text-left">
+              <p className="text-muted-foreground mb-6 text-center md:text-left font-body">
                 I'm a software engineer with a passion for building efficient, scalable, and 
                 elegant solutions to complex problems. With a background in computer science 
                 and years of hands-on experience, I've developed a deep understanding of 
                 modern software development practices.
               </p>
               
-              <p className="text-muted-foreground mb-6 text-center md:text-left">
+              <p className="text-muted-foreground mb-6 text-center md:text-left font-body">
                 My journey in tech started when I wrote my first line of code as a teenager. 
                 Since then, I've been constantly learning and adapting to new technologies 
                 and methodologies. I believe in writing clean, maintainable code that stands 
                 the test of time.
               </p>
               
-              <p className="text-muted-foreground text-center md:text-left">
+              <p className="text-muted-foreground text-center md:text-left font-body">
                 When I'm not coding, you can find me exploring new technologies, contributing 
                 to open-source projects, or enjoying anime. I'm always open to new opportunities 
                 and challenges.
@@ -90,7 +90,7 @@ export function About() {
             </div>
             
             <div>
-              <h3 className="text-xl font-semibold mb-6">My Skills & Expertise</h3>
+              <h3 className="text-xl font-semibold mb-6 font-anime">My Skills & Expertise</h3>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {skills.map((skill, index) => (
@@ -101,21 +101,32 @@ export function About() {
                     <div className="flex items-center justify-center h-10 w-10 rounded-full bg-accent/10 text-accent">
                       {skill.icon}
                     </div>
-                    <span className="font-medium">{skill.name}</span>
+                    <span className="font-medium font-body">{skill.name}</span>
                   </div>
                 ))}
               </div>
               
-              <h3 className="text-xl font-semibold mt-8 mb-6">Technologies I Work With</h3>
+              <h3 className="text-xl font-semibold mt-8 mb-6 font-anime">Technologies I Work With</h3>
               
               <div className="flex flex-wrap gap-2">
-                {["React", "TypeScript", "Node.js", "Next.js", "GraphQL", "MongoDB", "PostgreSQL", "AWS", "Docker", "Git"].map((tech, index) => (
+                {[
+                  {name: "React", logo: "https://cdn.worldvectorlogo.com/logos/react-2.svg"},
+                  {name: "TypeScript", logo: "https://cdn.worldvectorlogo.com/logos/typescript.svg"},
+                  {name: "Node.js", logo: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg"},
+                  {name: "Next.js", logo: "https://cdn.worldvectorlogo.com/logos/nextjs-2.svg"},
+                  {name: "GraphQL", logo: "https://cdn.worldvectorlogo.com/logos/graphql.svg"},
+                  {name: "MongoDB", logo: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg"},
+                  {name: "PostgreSQL", logo: "https://cdn.worldvectorlogo.com/logos/postgresql.svg"},
+                  {name: "AWS", logo: "https://cdn.worldvectorlogo.com/logos/aws-2.svg"},
+                  {name: "Docker", logo: "https://cdn.worldvectorlogo.com/logos/docker-3.svg"},
+                  {name: "Git", logo: "https://cdn.worldvectorlogo.com/logos/git-icon.svg"}
+                ].map((tech, index) => (
                   <div 
                     key={index}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm"
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-body"
                   >
-                    <Check className="h-3.5 w-3.5 text-accent" />
-                    {tech}
+                    <img src={tech.logo} alt={tech.name} className="h-4 w-4" />
+                    {tech.name}
                   </div>
                 ))}
               </div>

@@ -31,26 +31,26 @@ export function Projects() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce application with user authentication, product catalog, cart functionality, and payment processing.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop",
+      title: "Anime Tracker",
+      description: "A mobile application to track your favorite anime series, episodes, and get notifications for new releases.",
+      tags: ["React Native", "Firebase", "Redux", "Jikan API"],
+      image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1000&auto=format&fit=crop",
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, team workspaces, and progress tracking.",
-      tags: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=1000&auto=format&fit=crop",
+      title: "Manga Reader",
+      description: "A cross-platform mobile app for reading and downloading manga with a beautiful UI and offline reading capability.",
+      tags: ["Flutter", "Dart", "SQLite", "REST API"],
+      image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?q=80&w=1000&auto=format&fit=crop",
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
     },
     {
-      title: "AI Content Generator",
-      description: "An AI-powered application that generates content based on user prompts using natural language processing.",
-      tags: ["React", "Python", "TensorFlow", "Flask"],
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop",
+      title: "Cosplay Companion",
+      description: "A social app for cosplayers to share their costumes, find events, and connect with other enthusiasts in their area.",
+      tags: ["React Native", "GraphQL", "AWS Amplify", "Maps API"],
+      image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?q=80&w=1000&auto=format&fit=crop",
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
     },
@@ -64,17 +64,17 @@ export function Projects() {
     >
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="inline-block mb-4 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
+          <div className="inline-block mb-4 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium font-anime">
             My Work
           </div>
           
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Featured Projects
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-anime">
+                Mobile App Projects
               </h2>
-              <p className="text-muted-foreground max-w-2xl">
-                Here are some of my recent projects. Each one presented unique challenges
+              <p className="text-muted-foreground max-w-2xl font-body">
+                Here are some of my recent mobile application projects. Each one presented unique challenges
                 and opportunities to learn and grow as a developer.
               </p>
             </div>
@@ -84,7 +84,7 @@ export function Projects() {
             {projects.map((project, index) => (
               <div 
                 key={index} 
-                className="group anime-card flex flex-col h-full transition-transform duration-300 hover:-translate-y-2"
+                className="group anime-card flex flex-col h-full transition-transform duration-300 hover:-translate-y-2 bg-card/70 backdrop-blur-sm"
               >
                 <div className="relative mb-5 overflow-hidden rounded-md aspect-video">
                   <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
@@ -95,9 +95,9 @@ export function Projects() {
                   />
                 </div>
                 
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 font-anime">{project.title}</h3>
                 
-                <p className="text-muted-foreground mb-4 flex-grow">
+                <p className="text-muted-foreground mb-4 flex-grow font-body">
                   {project.description}
                 </p>
                 
@@ -105,7 +105,7 @@ export function Projects() {
                   {project.tags.map((tag, idx) => (
                     <span 
                       key={idx} 
-                      className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground"
+                      className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground font-body"
                     >
                       {tag}
                     </span>
@@ -138,7 +138,7 @@ export function Projects() {
                     href={project.liveUrl}
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-sm font-medium text-accent hover:text-accent/80 inline-flex items-center gap-1 transition-colors"
+                    className="text-sm font-medium text-accent hover:text-accent/80 inline-flex items-center gap-1 transition-colors font-body"
                   >
                     View Project
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -149,7 +149,7 @@ export function Projects() {
           </div>
           
           <div className="mt-16 text-center">
-            <Button className="anime-button" asChild>
+            <Button className="anime-button font-anime" asChild>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer">
                 View More Projects
                 <ArrowRight className="ml-2 h-4 w-4" />

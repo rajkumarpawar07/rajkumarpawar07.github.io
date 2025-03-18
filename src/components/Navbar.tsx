@@ -21,6 +21,7 @@ export function Navbar() {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Work", href: "#work-experience" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" }
   ];
@@ -34,7 +35,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2">
           <Code className="h-6 w-6 text-accent" />
-          <span className="font-display text-xl font-bold">DevAnime</span>
+          <span className="font-anime text-xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">DevAnime</span>
         </a>
         
         <nav className="hidden md:flex items-center gap-8">
@@ -42,7 +43,7 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium transition-colors hover:text-accent"
+              className="text-sm font-medium transition-colors hover:text-accent font-anime"
             >
               {link.name}
             </a>
@@ -74,7 +75,7 @@ export function Navbar() {
           <div className="flex items-center justify-between mb-8">
             <a href="#home" className="flex items-center gap-2">
               <Code className="h-6 w-6 text-accent" />
-              <span className="font-display text-xl font-bold">DevAnime</span>
+              <span className="font-anime text-xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">DevAnime</span>
             </a>
             <Button variant="ghost" size="icon" onClick={toggleMenu}>
               <X className="h-6 w-6" />
@@ -87,7 +88,7 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xl font-medium transition-colors hover:text-accent"
+                className="text-xl font-medium transition-colors hover:text-accent font-anime"
                 onClick={toggleMenu}
               >
                 {link.name}

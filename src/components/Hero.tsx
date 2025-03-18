@@ -50,13 +50,13 @@ export function Hero() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up font-anime">
             Hey! I'm Rajkumar Pawar
           </h1>
           
           <div className="flex justify-center items-center mb-6 text-2xl md:text-3xl animate-slide-up animation-delay-100">
             <span 
-              className={`font-bold transition-all duration-500 ${roleColors[roles[roleIndex]]}`}
+              className={`font-bold transition-all duration-500 ${roleColors[roles[roleIndex]]} font-anime`}
               key={roleIndex}
             >
               {typedText}
@@ -65,19 +65,18 @@ export function Hero() {
           </div>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-slide-up animation-delay-200">
-            I specialize in building modern, scalable solutions with
-            cutting-edge technologies, turning complex problems into elegant solutions.
+            Building the Future with Code & Cloud
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up animation-delay-300">
-            <Button className="anime-button min-w-[160px]" asChild>
+            <Button className="anime-button min-w-[160px] font-anime" asChild>
               <a href="#projects">
                 View Projects
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
             
-            <Button variant="outline" className="min-w-[160px]" asChild>
+            <Button variant="outline" className="min-w-[160px] font-anime" asChild>
               <a href="#contact">Contact Me</a>
             </Button>
           </div>
@@ -116,9 +115,9 @@ export function Hero() {
         </div>
       </div>
       
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 left-8 w-24 h-24 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-8 w-32 h-32 bg-accent/10 rounded-full blur-3xl animate-pulse animation-delay-300"></div>
+      {/* Anime-themed decorative elements */}
+      <div className="absolute top-1/4 left-8 w-24 h-24 bg-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-8 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-pulse animation-delay-300"></div>
       <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent/5 rounded-full animate-spin-slow"></div>
       <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-accent/5 rounded-full animate-spin-slow"></div>
     </section>
