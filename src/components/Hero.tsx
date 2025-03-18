@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 
 export function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
+  const [typedText, setTypedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  
   const roles = ["backend", "mobile", "cloud", "devops"];
   const roleColors = {
     backend: "text-blue-500",
@@ -13,13 +16,34 @@ export function Hero() {
     devops: "text-green-500"
   };
 
+  // Role cycling effect
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
-    }, 2000);
+      setTypedText("");
+      setIsTyping(true);
+    }, 4000);
     
     return () => clearInterval(interval);
   }, []);
+
+  // Typewriter effect
+  useEffect(() => {
+    if (!isTyping) return;
+    
+    const currentRole = roles[roleIndex];
+    const text = `I'm ${currentRole} engineer`;
+    
+    if (typedText.length < text.length) {
+      const timeout = setTimeout(() => {
+        setTypedText(text.substring(0, typedText.length + 1));
+      }, 100);
+      
+      return () => clearTimeout(timeout);
+    } else {
+      setIsTyping(false);
+    }
+  }, [typedText, roleIndex, isTyping]);
 
   return (
     <section id="home" className="relative pt-24 pb-12 md:pt-32 md:pb-24 overflow-hidden">
@@ -31,18 +55,13 @@ export function Hero() {
           </h1>
           
           <div className="flex justify-center items-center mb-6 text-2xl md:text-3xl animate-slide-up animation-delay-100">
-            <span className="mr-2">I'm</span>
             <span 
               className={`font-bold transition-all duration-500 ${roleColors[roles[roleIndex]]}`}
               key={roleIndex}
-              style={{ 
-                animation: "scale-bounce 2s infinite",
-                display: "inline-block" 
-              }}
             >
-              {roles[roleIndex]}
+              {typedText}
+              <span className="animate-pulse">|</span>
             </span>
-            <span className="ml-2">engineer</span>
           </div>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-slide-up animation-delay-200">
@@ -96,14 +115,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-      
-      {/* Add custom keyframes for scale-bounce animation */}
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes scale-bounce {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.1); }
-        }
-      `}} />
       
       {/* Decorative elements */}
       <div className="absolute top-1/4 left-8 w-24 h-24 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
