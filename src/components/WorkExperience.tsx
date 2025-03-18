@@ -77,7 +77,7 @@ export function WorkExperience() {
 
   return (
     <section 
-      id="experience" 
+      id="work-experience" 
       ref={sectionRef} 
       className="py-24 opacity-0 transition-opacity duration-1000"
     >
@@ -97,7 +97,7 @@ export function WorkExperience() {
           
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <Card key={index} className="border border-border hover:border-accent/20 transition-all duration-300 overflow-hidden">
+              <Card key={index} className="border border-border hover:border-accent/20 transition-all duration-300 overflow-hidden bg-card/90 backdrop-blur-sm">
                 <CardContent className="p-0">
                   <div className="p-6">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">

@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { ThemeToggle } from "./ThemeToggle";
 import { Code, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -51,8 +50,6 @@ export function Navbar() {
         </nav>
         
         <div className="flex items-center gap-4">
-          <ThemeToggle />
-          
           <Button
             variant="ghost"
             size="icon"

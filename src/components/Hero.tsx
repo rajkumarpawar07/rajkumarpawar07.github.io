@@ -50,11 +50,11 @@ export function Hero() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up font-anime">
-            Hey! I'm Rajkumar Pawar
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-slide-up font-anime">
+            Rajkumar Pawar
           </h1>
           
-          <div className="flex justify-center items-center mb-6 text-2xl md:text-3xl animate-slide-up animation-delay-100">
+          <div className="flex justify-center items-center mb-6 text-xl md:text-2xl animate-slide-up animation-delay-100">
             <span 
               className={`font-bold transition-all duration-500 ${roleColors[roles[roleIndex]]} font-anime`}
               key={roleIndex}
