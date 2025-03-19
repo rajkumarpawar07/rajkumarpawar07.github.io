@@ -2,7 +2,7 @@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, ExternalLink, Github, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface ProjectImage {
   src: string;
@@ -26,12 +26,37 @@ interface ProjectDialogProps {
 
 export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  
+  // Auto-play functionality
+  useEffect(() => {
+    if (autoPlay && project.images.length > 1) {
+      autoPlayRef.current = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+      }, 4000);
+    }
+    
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [autoPlay, project.images.length]);
   
   const nextImage = () => {
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+      setAutoPlay(false);
+    }
     setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
   };
   
   const prevImage = () => {
+    if (autoPlayRef.current) {
+      clearInterval(autoPlayRef.current);
+      setAutoPlay(false);
+    }
     setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
   };
   
@@ -51,7 +76,12 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
         
         <div className="w-full bg-black relative overflow-hidden">
           {/* Image gallery */}
-          <div className="relative w-full" style={{ height: "40vh" }}>
+          <div 
+            className="relative w-full" 
+            style={{ height: "40vh" }}
+            onMouseEnter={() => setAutoPlay(false)}
+            onMouseLeave={() => setAutoPlay(true)}
+          >
             {project.images.map((image, index) => (
               <div
                 key={index}
@@ -95,7 +125,13 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
                       className={`w-2 h-2 rounded-full transition-all ${
                         index === currentImageIndex ? "bg-white scale-125" : "bg-white/50"
                       }`}
-                      onClick={() => setCurrentImageIndex(index)}
+                      onClick={() => {
+                        setCurrentImageIndex(index);
+                        if (autoPlayRef.current) {
+                          clearInterval(autoPlayRef.current);
+                          setAutoPlay(false);
+                        }
+                      }}
                     />
                   ))}
                 </div>

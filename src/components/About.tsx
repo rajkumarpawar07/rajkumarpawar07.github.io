@@ -1,10 +1,18 @@
 
-import { useRef, useEffect } from "react";
-import { Code, Database, Layout, Layers, Server } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+import { Code, Database, Layout, Layers, Server, ChevronLeft, ChevronRight } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [autoPlay, setAutoPlay] = useState(true);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,6 +36,26 @@ export function About() {
       }
     };
   }, []);
+
+  // Gallery images
+  const galleryImages = [
+    {
+      src: "/lovable-uploads/ec25773d-152e-4ee7-a4da-051fabdfae5f.png",
+      alt: "Me working on a project"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
+      alt: "Coding session"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?q=80&w=1000&auto=format&fit=crop",
+      alt: "At a tech conference"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop",
+      alt: "Client meeting"
+    }
+  ];
 
   const skills = [
     { name: "Frontend Development", icon: <Layout className="h-5 w-5" /> },
@@ -87,6 +115,39 @@ export function About() {
                 to open-source projects, or enjoying anime. I'm always open to new opportunities 
                 and challenges.
               </p>
+              
+              {/* Photo Gallery */}
+              <div className="mt-12 w-full">
+                <h3 className="text-xl font-semibold mb-6 font-anime text-center md:text-left">My Journey</h3>
+                <div className="relative rounded-lg overflow-hidden bg-card/60 backdrop-blur-sm border border-border p-1">
+                  <Carousel
+                    opts={{
+                      align: "start",
+                      loop: true,
+                    }}
+                    className="w-full"
+                    autoplay={autoPlay}
+                    onMouseEnter={() => setAutoPlay(false)}
+                    onMouseLeave={() => setAutoPlay(true)}
+                  >
+                    <CarouselContent>
+                      {galleryImages.map((image, index) => (
+                        <CarouselItem key={index} className="basis-full">
+                          <div className="relative overflow-hidden rounded-md aspect-video">
+                            <img
+                              src={image.src}
+                              alt={image.alt}
+                              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 border-none text-white" />
+                    <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 border-none text-white" />
+                  </Carousel>
+                </div>
+              </div>
             </div>
             
             <div>

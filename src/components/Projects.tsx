@@ -49,7 +49,9 @@ export function Projects() {
       images: [
         { src: "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1000&auto=format&fit=crop", alt: "Anime Tracker App" },
         { src: "https://images.unsplash.com/photo-1614583224978-f05ce51ef5fa?q=80&w=1000&auto=format&fit=crop", alt: "Watchlist Feature" },
-        { src: "https://images.unsplash.com/photo-1586373658649-efc69c42be45?q=80&w=1000&auto=format&fit=crop", alt: "Notification Screen" }
+        { src: "https://images.unsplash.com/photo-1586373658649-efc69c42be45?q=80&w=1000&auto=format&fit=crop", alt: "Notification Screen" },
+        { src: "https://images.unsplash.com/photo-1541562232579-512a21360020?q=80&w=1000&auto=format&fit=crop", alt: "Search Feature" },
+        { src: "https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?q=80&w=1000&auto=format&fit=crop", alt: "User Profile" }
       ],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
@@ -71,7 +73,9 @@ export function Projects() {
       images: [
         { src: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?q=80&w=1000&auto=format&fit=crop", alt: "Manga Reader App" },
         { src: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop", alt: "Reading View" },
-        { src: "https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1000&auto=format&fit=crop", alt: "Library Screen" }
+        { src: "https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1000&auto=format&fit=crop", alt: "Library Screen" },
+        { src: "https://images.unsplash.com/photo-1598618443855-232ee0f819f6?q=80&w=1000&auto=format&fit=crop", alt: "Search Results" },
+        { src: "https://images.unsplash.com/photo-1588497859490-85d1c17db96d?q=80&w=1000&auto=format&fit=crop", alt: "Settings Page" }
       ],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
@@ -93,7 +97,9 @@ export function Projects() {
       images: [
         { src: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?q=80&w=1000&auto=format&fit=crop", alt: "Cosplay Companion App" },
         { src: "https://images.unsplash.com/photo-1568083608325-ded9eaab4113?q=80&w=1000&auto=format&fit=crop", alt: "Events Screen" },
-        { src: "https://images.unsplash.com/photo-1536243298747-ea8874136d64?q=80&w=1000&auto=format&fit=crop", alt: "Community Feed" }
+        { src: "https://images.unsplash.com/photo-1536243298747-ea8874136d64?q=80&w=1000&auto=format&fit=crop", alt: "Community Feed" },
+        { src: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=1000&auto=format&fit=crop", alt: "User Profile" },
+        { src: "https://images.unsplash.com/photo-1612036782180-6f0822368025?q=80&w=1000&auto=format&fit=crop", alt: "Convention Map" }
       ],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
