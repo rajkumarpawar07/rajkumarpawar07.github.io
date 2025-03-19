@@ -100,7 +100,7 @@ export function About() {
                 I'm a software engineer with a passion for building efficient, scalable, and 
                 elegant solutions to complex problems. With a background in computer science 
                 and years of hands-on experience, I've developed a deep understanding of 
-                modern software development practices.
+                modern software practices.
               </p>
               
               <p className="text-muted-foreground mb-6 text-center md:text-left font-body">
