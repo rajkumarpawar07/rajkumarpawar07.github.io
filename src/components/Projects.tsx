@@ -124,14 +124,14 @@ export function Projects() {
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <div 
                 key={index} 
                 className="group anime-card flex flex-col h-full transition-transform duration-300 hover:-translate-y-2 bg-card/70 backdrop-blur-sm cursor-pointer"
                 onClick={() => setSelectedProject(index)}
               >
-                <div className="relative mb-5 overflow-hidden rounded-md aspect-video">
+                <div className="relative mb-5 overflow-hidden rounded-md aspect-[4/3]">
                   <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                   <img 
                     src={project.image} 

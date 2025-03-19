@@ -21,7 +21,7 @@ export function Hero() {
           </h1>
           
           <div className="flex justify-center items-center mb-8 text-xl md:text-2xl">
-            <div className={`font-bold transition-all duration-700 ease-in-out text-white font-anime opacity-0 ${isVisible ? 'opacity-100' : ''}`}>
+            <div className={`font-bold transition-all duration-700 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 font-anime opacity-0 ${isVisible ? 'opacity-100' : ''}`}>
               Full-Stack Developer with Cloud Engineering & DevOps Expertise
               <span className="animate-pulse inline-block ml-1">|</span>
             </div>

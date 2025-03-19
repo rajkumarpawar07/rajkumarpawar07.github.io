@@ -49,7 +49,7 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
           </Button>
         </div>
         
-        <div className="w-full bg-black overflow-hidden">
+        <div className="w-full bg-black relative overflow-hidden">
           {/* Image gallery */}
           <div className="relative w-full" style={{ height: "40vh" }}>
             {project.images.map((image, index) => (
@@ -62,7 +62,7 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-black"
                 />
               </div>
             ))}
