@@ -37,8 +37,8 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
   
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl w-[90vw] max-h-[90vh] overflow-y-auto p-0 border border-border/40 bg-card/95 backdrop-blur-lg">
-        <div className="sticky top-0 z-10 flex justify-end p-2">
+      <DialogContent className="max-w-4xl w-[90vw] max-h-[90vh] overflow-y-auto p-0 border border-border/40 bg-card/95 backdrop-blur-lg flex flex-col">
+        <div className="sticky top-0 z-20 flex justify-end p-2 bg-black/50">
           <Button 
             variant="ghost" 
             size="icon" 
@@ -49,9 +49,9 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
           </Button>
         </div>
         
-        <div className="relative aspect-video bg-black/50 overflow-hidden">
+        <div className="w-full bg-black overflow-hidden">
           {/* Image gallery */}
-          <div className="relative w-full h-full">
+          <div className="relative w-full" style={{ height: "40vh" }}>
             {project.images.map((image, index) => (
               <div
                 key={index}
@@ -104,7 +104,7 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
           </div>
         </div>
         
-        <div className="p-6">
+        <div className="p-6 z-10 bg-card">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold font-anime">{project.title}</DialogTitle>
             <DialogDescription className="text-muted-foreground">

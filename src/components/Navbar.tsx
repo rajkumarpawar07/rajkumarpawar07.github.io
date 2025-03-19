@@ -1,9 +1,8 @@
 
 import { useState, useEffect } from "react";
-import { Code, Menu, X, Github, Globe, Twitter, Youtube } from "lucide-react";
+import { Menu, X, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,6 +20,7 @@ export function Navbar() {
     { name: "About", href: "#about" },
     { name: "Work", href: "#work-experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Certifications", href: "#certifications" },
     { name: "Contact", href: "#contact" }
   ];
 
@@ -36,7 +36,7 @@ export function Navbar() {
           : "bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-cyan-400/20 backdrop-blur-md"
       } rounded-full px-6 transition-all duration-300`}>
         <div className="flex items-center justify-between h-12">
-          <a href="#home" className="flex items-center gap-2">
+          <a href="#home" className="flex items-center gap-2 mr-8">
             <span className="font-anime text-xl font-bold italic bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
               Rajkumar
             </span>
@@ -52,36 +52,6 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
-          </div>
-          
-          <div className="hidden md:flex items-center gap-4">
-            <a 
-              href="https://github.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="GitHub"
-            >
-              <Github className="h-5 w-5" />
-            </a>
-            <a 
-              href="https://youtube.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Website"
-            >
-              <Globe className="h-5 w-5" />
-            </a>
-            <a 
-              href="https://twitter.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="h-5 w-5" />
-            </a>
           </div>
           
           <Sheet>
@@ -129,24 +99,6 @@ export function Navbar() {
                       aria-label="YouTube"
                     >
                       <Youtube className="h-5 w-5" />
-                    </a>
-                    <a 
-                      href="https://github.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                      aria-label="GitHub"
-                    >
-                      <Globe className="h-5 w-5" />
-                    </a>
-                    <a 
-                      href="https://twitter.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                      aria-label="Twitter"
-                    >
-                      <Twitter className="h-5 w-5" />
                     </a>
                   </div>
                 </div>
