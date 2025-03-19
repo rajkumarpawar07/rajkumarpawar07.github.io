@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Code, Menu, X, Github, Globe, Twitter } from "lucide-react";
+import { Code, Menu, X, Github, Globe, Twitter, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
