@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Code, Menu, X, Youtube, Globe, Twitter } from "lucide-react";
+import { Code, Menu, X, Github, Globe, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -26,19 +26,23 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
-        isScrolled ? "py-3 bg-black/80 backdrop-blur-md" : "py-4 bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out flex justify-center py-3 ${
+        isScrolled ? "py-2" : "py-3"
       }`}
     >
-      <div className="container max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between">
+      <div className={`max-w-3xl mx-auto ${
+        isScrolled 
+          ? "bg-black/80 backdrop-blur-md" 
+          : "bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-cyan-400/20 backdrop-blur-md"
+      } rounded-full px-6 transition-all duration-300`}>
+        <div className="flex items-center justify-between h-12">
           <a href="#home" className="flex items-center gap-2">
-            <span className="font-anime text-2xl font-bold italic bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
+            <span className="font-anime text-xl font-bold italic bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
               Rajkumar
             </span>
           </a>
           
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -48,42 +52,24 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
-            
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="ghost" size="sm" className="font-anime">
-                  More
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-40 p-2">
-                <div className="flex flex-col gap-1">
-                  <a href="#" className="px-2 py-1.5 text-sm rounded-md hover:bg-accent/10 transition-colors">
-                    Resume
-                  </a>
-                  <a href="#" className="px-2 py-1.5 text-sm rounded-md hover:bg-accent/10 transition-colors">
-                    Blog
-                  </a>
-                </div>
-              </PopoverContent>
-            </Popover>
           </div>
           
           <div className="hidden md:flex items-center gap-4">
-            <a 
-              href="https://youtube.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="YouTube"
-            >
-              <Youtube className="h-5 w-5" />
-            </a>
             <a 
               href="https://github.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="GitHub"
+            >
+              <Github className="h-5 w-5" />
+            </a>
+            <a 
+              href="https://youtube.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Website"
             >
               <Globe className="h-5 w-5" />
             </a>

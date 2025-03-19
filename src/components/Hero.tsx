@@ -4,35 +4,11 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 export function Hero() {
-  const [isAnimating, setIsAnimating] = useState(true);
-  const [displayText, setDisplayText] = useState("");
-  const fullText = "Full-Stack Developer with Cloud Engineering & DevOps Expertise";
-  const animationSpeed = 50; // ms per character
+  const [isVisible, setIsVisible] = useState(false);
   
-  // Typing animation effect
+  // Simple fade-in animation effect
   useEffect(() => {
-    if (!isAnimating) return;
-    
-    if (displayText.length < fullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText(fullText.substring(0, displayText.length + 1));
-      }, animationSpeed);
-      
-      return () => clearTimeout(timeout);
-    } else {
-      // Once typing is complete, wait before starting over
-      const timeout = setTimeout(() => {
-        setDisplayText("");
-      }, 3000);
-      
-      return () => clearTimeout(timeout);
-    }
-  }, [displayText, isAnimating]);
-
-  // Start animation when component mounts
-  useEffect(() => {
-    setIsAnimating(true);
-    return () => setIsAnimating(false);
+    setIsVisible(true);
   }, []);
 
   return (
@@ -40,15 +16,15 @@ export function Hero() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up font-anime">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 animate-slide-up font-anime">
             Rajkumar Pawar
           </h1>
           
-          <div className="flex justify-center items-center mb-8 text-xl md:text-2xl animate-slide-up animation-delay-100">
-            <span className="font-bold transition-all duration-300 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 font-anime">
-              {displayText}
-              <span className="animate-pulse">|</span>
-            </span>
+          <div className="flex justify-center items-center mb-8 text-xl md:text-2xl">
+            <div className={`font-bold transition-all duration-700 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 font-anime opacity-0 ${isVisible ? 'opacity-100' : ''}`}>
+              Full-Stack Developer with Cloud Engineering & DevOps Expertise
+              <span className="animate-pulse inline-block ml-1">|</span>
+            </div>
           </div>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up animation-delay-300">

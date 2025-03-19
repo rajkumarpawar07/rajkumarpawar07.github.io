@@ -37,14 +37,19 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
   
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl w-[90vw] max-h-[90vh] overflow-y-auto glassmorphism p-0">
+      <DialogContent className="max-w-4xl w-[90vw] max-h-[90vh] overflow-y-auto p-0 border border-border/40 bg-card/95 backdrop-blur-lg">
         <div className="sticky top-0 z-10 flex justify-end p-2">
-          <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)} className="rounded-full bg-black/20 hover:bg-black/40">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => onOpenChange(false)} 
+            className="rounded-full bg-black/40 hover:bg-black/60 h-8 w-8"
+          >
             <X className="h-4 w-4" />
           </Button>
         </div>
         
-        <div className="relative aspect-video bg-black/20 overflow-hidden">
+        <div className="relative aspect-video bg-black/50 overflow-hidden">
           {/* Image gallery */}
           <div className="relative w-full h-full">
             {project.images.map((image, index) => (
@@ -69,7 +74,7 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
                   variant="ghost"
                   size="icon"
                   onClick={prevImage}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/20 hover:bg-black/40"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/40 hover:bg-black/60 z-10"
                 >
                   <ArrowLeft className="h-4 w-4" />
                 </Button>
@@ -77,13 +82,13 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
                   variant="ghost"
                   size="icon"
                   onClick={nextImage}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/20 hover:bg-black/40"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/40 hover:bg-black/60 z-10"
                 >
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 
                 {/* Image indicators */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                   {project.images.map((_, index) => (
                     <button
                       key={index}
@@ -107,7 +112,7 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
             </DialogDescription>
           </DialogHeader>
           
-          <div className="mt-6 space-y-4">
+          <div className="mt-6 space-y-5">
             {project.longDescription && (
               <div className="space-y-2">
                 <h3 className="text-lg font-semibold font-anime">About this project</h3>
@@ -118,7 +123,7 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
             {project.features && project.features.length > 0 && (
               <div className="space-y-2">
                 <h3 className="text-lg font-semibold font-anime">Key Features</h3>
-                <ul className="list-disc list-inside text-sm text-muted-foreground">
+                <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
                   {project.features.map((feature, index) => (
                     <li key={index}>{feature}</li>
                   ))}
@@ -164,7 +169,7 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
                 </a>
               </div>
               
-              <Button className="anime-button font-anime" asChild>
+              <Button className="anime-button font-anime bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600" asChild>
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                   View Live Project
                   <ExternalLink className="ml-2 h-4 w-4" />
