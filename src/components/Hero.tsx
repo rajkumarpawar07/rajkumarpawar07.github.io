@@ -51,10 +51,6 @@ export function Hero() {
             </span>
           </div>
           
-          <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 font-bold mb-8 max-w-2xl mx-auto animate-slide-up animation-delay-200 font-anime">
-            Code, Cloud & Scalability – My Passion, Your Solution
-          </p>
-          
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up animation-delay-300">
             <Button className="anime-button min-w-[160px] font-anime" asChild>
               <a href="#projects">
