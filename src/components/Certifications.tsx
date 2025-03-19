@@ -1,6 +1,6 @@
 
 import { useRef, useEffect } from "react";
-import { Certificate } from "lucide-react";
+import { Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Certifications() {
@@ -120,7 +120,7 @@ export function Certifications() {
                         target="_blank" 
                         rel="noopener noreferrer"
                       >
-                        <Certificate className="mr-2 h-4 w-4" />
+                        <Award className="mr-2 h-4 w-4" />
                         View Certification
                       </a>
                     </Button>
