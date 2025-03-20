@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, Youtube } from "lucide-react";
+import { Menu, X, Youtube, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -16,29 +16,29 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Timeline", href: "#work-experience", hasNew: true },
+    { name: "Work", href: "#projects" },
     { name: "About", href: "#about" },
-    { name: "Work", href: "#work-experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "Certifications", href: "#certifications" },
-    { name: "Contact", href: "#contact" }
+    { name: "Story", href: "#certifications" },
+    { name: "Tips", href: "#contact", hasNew: true },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out flex justify-center py-3 ${
-        isScrolled ? "py-2" : "py-3"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-center py-3 ${
+        isScrolled ? "py-2" : "py-4"
       }`}
     >
-      <div className={`max-w-3xl mx-auto ${
+      <div className={`max-w-4xl w-full mx-auto ${
         isScrolled 
           ? "bg-black/80 backdrop-blur-md" 
-          : "bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-cyan-400/20 backdrop-blur-md"
+          : "bg-black/60 backdrop-blur-md"
       } rounded-full px-6 transition-all duration-300`}>
         <div className="flex items-center justify-between h-12">
-          <a href="#home" className="flex items-center gap-2 mr-8">
-            <span className="font-anime text-xl font-bold italic bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
-              Rajkumar
+          <a href="#home" className="flex items-center gap-2">
+            <span className="font-body text-xl font-bold italic bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text relative">
+              reality
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-pink-500 to-purple-500"></span>
             </span>
           </a>
           
@@ -47,11 +47,30 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium transition-colors hover:text-accent font-anime"
+                className="text-sm font-medium transition-colors hover:text-accent font-body relative group"
               >
                 {link.name}
+                {link.hasNew && (
+                  <span className="absolute -top-1 -right-2 w-2 h-2 bg-red-500 rounded-full"></span>
+                )}
+                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
+            <div className="relative">
+              <Button variant="ghost" size="sm" className="text-sm font-medium font-body">
+                More
+                <span className="ml-1">▼</span>
+              </Button>
+            </div>
+          </div>
+          
+          <div className="hidden md:flex items-center gap-4">
+            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <Youtube className="h-5 w-5" />
+            </a>
+            <Button variant="ghost" size="icon" className="rounded-full">
+              <Sun className="h-5 w-5" />
+            </Button>
           </div>
           
           <Sheet>
@@ -65,8 +84,8 @@ export function Navbar() {
               <div className="flex flex-col h-full py-4">
                 <div className="mb-8">
                   <a href="#home" className="flex items-center gap-2">
-                    <span className="font-anime text-xl font-bold italic bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
-                      Rajkumar
+                    <span className="font-body text-xl font-bold italic bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
+                      reality
                     </span>
                   </a>
                 </div>
@@ -76,17 +95,14 @@ export function Navbar() {
                     <a
                       key={link.name}
                       href={link.href}
-                      className="text-lg font-medium py-2 transition-colors hover:text-accent font-anime"
+                      className="text-lg font-medium py-2 transition-colors hover:text-accent font-body relative"
                     >
                       {link.name}
+                      {link.hasNew && (
+                        <span className="absolute top-2 -right-2 w-2 h-2 bg-red-500 rounded-full"></span>
+                      )}
                     </a>
                   ))}
-                  <a href="#" className="text-lg font-medium py-2 transition-colors hover:text-accent font-anime">
-                    Resume
-                  </a>
-                  <a href="#" className="text-lg font-medium py-2 transition-colors hover:text-accent font-anime">
-                    Blog
-                  </a>
                 </nav>
                 
                 <div className="mt-auto">

@@ -20,7 +20,7 @@ export function SkillsSection() {
         {skills.map((skill, index) => (
           <div 
             key={index} 
-            className="flex items-center gap-3 p-4 rounded-lg border border-border bg-card/60 backdrop-blur-sm transition-all hover:border-accent/50 hover:bg-accent/5"
+            className="flex items-center gap-3 p-4 rounded-lg border border-border/40 bg-card/40 backdrop-blur-sm transition-all hover:border-accent/30 hover:bg-accent/5"
           >
             <div className="flex items-center justify-center h-10 w-10 rounded-full bg-accent/10 text-accent">
               {skill.icon}

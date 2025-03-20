@@ -4,7 +4,7 @@ import React from "react";
 export function AboutHeading() {
   return (
     <>
-      <div className="inline-block mb-4 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium font-anime">
+      <div className="inline-block mb-4 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium font-body">
         About Me
       </div>
       

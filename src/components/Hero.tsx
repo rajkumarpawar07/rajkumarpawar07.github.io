@@ -1,5 +1,5 @@
 
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
+import { Figma, Github, Linkedin, Twitter, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
@@ -12,43 +12,56 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative pt-24 pb-12 md:pt-32 md:pb-24 overflow-hidden">
+    <section id="home" className="relative pt-36 pb-12 md:pt-48 md:pb-24 overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 animate-slide-up font-anime">
-            Rajkumar Pawar
-          </h1>
-          
-          <div className="flex justify-center items-center mb-8 text-xl md:text-2xl">
-            <div className={`font-bold transition-all duration-700 ease-in-out text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 font-anime opacity-0 ${isVisible ? 'opacity-100' : ''}`}>
-              Full-Stack Developer with Cloud Engineering & DevOps Expertise
-              <span className="animate-pulse inline-block ml-1">|</span>
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
+              <img 
+                src="/lovable-uploads/ec25773d-152e-4ee7-a4da-051fabdfae5f.png" 
+                alt="Profile" 
+                className="w-full h-full object-cover"
+              />
             </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-anime leading-tight">
+              Hi, I'm <span className="text-gradient-anime">Rajkumar Pawar</span>,
+            </h1>
           </div>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up animation-delay-300">
-            <Button className="anime-button min-w-[160px] font-anime" asChild>
-              <a href="#projects">
-                View Projects
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-            
-            <Button variant="outline" className="min-w-[160px] font-anime" asChild>
-              <a href="#contact">Contact Me</a>
-            </Button>
-          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-anime leading-tight">
+            Full-Stack Developer <span className="font-normal">&</span> Cloud Engineer.
+          </h2>
           
-          <div className="flex items-center justify-center gap-6 animate-fade-in animation-delay-400">
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl font-body">
+            A software engineer with a passion for building efficient, scalable, and 
+            elegant solutions to complex problems. I tell stories through code and create 
+            digital experiences that people love.
+          </p>
+          
+          <div className="flex items-center gap-6 mb-16">
             <a 
-              href="https://github.com" 
+              href="https://twitter.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="GitHub"
+              aria-label="Twitter"
             >
-              <Github className="h-6 w-6" />
+              <Twitter className="h-5 w-5" />
+            </a>
+            
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Instagram"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="2"/>
+                <path d="M17.5 6.5L17.51 6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
             </a>
             
             <a 
@@ -58,27 +71,43 @@ export function Hero() {
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-6 w-6" />
+              <Linkedin className="h-5 w-5" />
             </a>
             
             <a 
-              href="https://twitter.com" 
+              href="https://youtube.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Twitter"
+              aria-label="YouTube"
             >
-              <Twitter className="h-6 w-6" />
+              <Youtube className="h-5 w-5" />
             </a>
+            
+            <a 
+              href="https://figma.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Figma"
+            >
+              <Figma className="h-5 w-5" />
+            </a>
+          </div>
+          
+          <p className="text-lg mb-4 font-body">
+            Building what I love at <a href="#work-experience" className="text-accent hover:underline">my projects</a>
+          </p>
+          
+          <div className="flex flex-wrap gap-8 items-center">
+            <img src="/lovable-uploads/c1eea56e-ff12-40c5-aa19-4e6c440e24a0.png" alt="Companies" className="max-h-8 opacity-70" />
           </div>
         </div>
       </div>
       
-      {/* Anime-themed decorative elements */}
-      <div className="absolute top-1/4 left-8 w-24 h-24 bg-pink-500/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 right-8 w-32 h-32 bg-purple-500/20 rounded-full blur-3xl animate-pulse animation-delay-300"></div>
-      <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent/5 rounded-full animate-spin-slow"></div>
-      <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-accent/5 rounded-full animate-spin-slow"></div>
+      {/* Subtle background gradient effects */}
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute -bottom-48 -left-48 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
     </section>
   );
 }
