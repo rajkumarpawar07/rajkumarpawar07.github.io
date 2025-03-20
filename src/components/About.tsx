@@ -112,59 +112,7 @@ export function About() {
                 and challenges.
               </p>
               
-              {/* Photo Gallery - Redesigned */}
-              <div className="w-full grid grid-cols-1 gap-6 mt-4">
-                <div className="relative rounded-xl overflow-hidden border border-anime-purple/30 shadow-lg shadow-anime-purple/10">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-anime-purple/20 to-anime-pink/20 z-0"></div>
-                  <Carousel
-                    opts={{
-                      align: "start",
-                      loop: true,
-                    }}
-                    className="w-full"
-                    autoplay={autoPlay}
-                  >
-                    <CarouselContent>
-                      {galleryImages.map((image, index) => (
-                        <CarouselItem key={index} className="basis-full">
-                          <div className="relative aspect-[16/9] overflow-hidden rounded-md">
-                            <img
-                              src={image.src}
-                              alt={image.alt}
-                              className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                          </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                    <div className="absolute z-10 bottom-4 left-0 right-0 flex justify-center gap-2">
-                      {galleryImages.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => {
-                            if (autoPlay) setAutoPlay(false);
-                          }}
-                          className="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all"
-                          aria-label={`Go to slide ${index + 1}`}
-                        />
-                      ))}
-                    </div>
-                    <CarouselPrevious 
-                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/20 backdrop-blur-sm hover:bg-background/40 border-anime-purple/30 text-white h-8 w-8" 
-                      onClick={() => {
-                        if (autoPlay) setAutoPlay(false);
-                      }}
-                    />
-                    <CarouselNext 
-                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/20 backdrop-blur-sm hover:bg-background/40 border-anime-purple/30 text-white h-8 w-8" 
-                      onClick={() => {
-                        if (autoPlay) setAutoPlay(false);
-                      }}
-                    />
-                  </Carousel>
-                </div>
-              </div>
+              
             </div>
             
             <div>
