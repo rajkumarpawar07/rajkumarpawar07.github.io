@@ -29,8 +29,8 @@ export function Hero() {
             </h1>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 font-anime leading-tight">
-            Full-Stack Developer <span className="font-normal">&</span> Cloud Engineer.
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 font-anime leading-tight">
+            Full-Stack Developer with Cloud Engineering & DevOps Expertise
           </h2>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl font-body">
