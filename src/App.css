@@ -48,12 +48,11 @@
 }
 
 .anime-forest-card {
-  background: rgba(30, 41, 59, 0.7);
+  background: rgba(30, 41, 59, 0.9);
   border: 1px solid rgba(139, 92, 246, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
 }
-
 
 .gradient-background {
   background: linear-gradient(

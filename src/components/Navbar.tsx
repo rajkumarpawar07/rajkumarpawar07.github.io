@@ -32,8 +32,8 @@ export function Navbar() {
     >
       <div className={`max-w-3xl mx-auto ${
         isScrolled 
-          ? "bg-black/80 backdrop-blur-md" 
-          : "bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-cyan-500/20 backdrop-blur-md"
+          ? "bg-black/95 backdrop-blur-md" 
+          : "bg-gradient-to-r from-purple-600/50 via-pink-600/50 to-cyan-500/50 backdrop-blur-md"
       } rounded-full px-6 transition-all duration-300`}>
         <div className="flex items-center justify-between h-12">
           <a href="#home" className="flex items-center gap-2 mr-8">
