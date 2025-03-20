@@ -4,7 +4,6 @@ import { AboutHeading } from "./about/AboutHeading";
 import { AboutBio } from "./about/AboutBio";
 import { SkillsSection } from "./about/SkillsSection";
 import { TechnologiesSection } from "./about/TechnologiesSection";
-import { PhotoGallery } from "./about/PhotoGallery";
 
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -51,9 +50,7 @@ export function About() {
             </div>
           </div>
           
-          <div className="mt-12">
-            <PhotoGallery />
-          </div>
+          
         </div>
       </div>
     </section>

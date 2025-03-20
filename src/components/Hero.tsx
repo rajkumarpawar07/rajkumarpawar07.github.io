@@ -17,12 +17,15 @@ export function Hero() {
         <div className="max-w-4xl mx-auto">
           
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-accent">
-              <img 
-                src="/lovable-uploads/ec25773d-152e-4ee7-a4da-051fabdfae5f.png" 
-                alt="Profile" 
-                className="w-full h-full object-cover"
-              />
+            <div className="relative">
+              <div className="absolute -inset-1.5 bg-gradient-to-r from-pink-700 to-purple-700 rounded-full opacity-100"></div>
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-background relative">
+                <img 
+                  src="/lovable-uploads/ec25773d-152e-4ee7-a4da-051fabdfae5f.png" 
+                  alt="Profile" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-anime leading-tight">
               Hi, I'm <span className="text-gradient-anime">Rajkumar Pawar</span>,
@@ -30,7 +33,7 @@ export function Hero() {
           </div>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 font-anime leading-tight">
-            Full-Stack Developer with Cloud Engineering & DevOps Expertise
+            Full-Stack Developer with Cloud Engineering & DevOps Expertise.
           </h2>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl font-body">
@@ -45,9 +48,11 @@ export function Hero() {
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Twitter"
+              aria-label="X"
             >
-              <Twitter className="h-5 w-5" />
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
+              </svg>
             </a>
             
             <a 
@@ -75,6 +80,16 @@ export function Hero() {
             </a>
             
             <a 
+              href="https://github.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="GitHub"
+            >
+              <Github className="h-6 w-6" />
+            </a>
+            
+            <a 
               href="https://youtube.com" 
               target="_blank" 
               rel="noopener noreferrer"
@@ -84,24 +99,10 @@ export function Hero() {
               <Youtube className="h-5 w-5" />
             </a>
             
-            <a 
-              href="https://figma.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Figma"
-            >
-              <Figma className="h-5 w-5" />
-            </a>
+          
           </div>
           
-          <p className="text-lg mb-4 font-body">
-            Building what I love at <a href="#work-experience" className="text-accent hover:underline">my projects</a>
-          </p>
-          
-          <div className="flex flex-wrap gap-8 items-center">
-            <img src="/lovable-uploads/c1eea56e-ff12-40c5-aa19-4e6c440e24a0.png" alt="Companies" className="max-h-8 opacity-70" />
-          </div>
+         
         </div>
       </div>
       

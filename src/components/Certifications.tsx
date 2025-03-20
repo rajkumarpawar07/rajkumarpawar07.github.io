@@ -45,7 +45,7 @@ export function Certifications() {
       date: "February 2023",
       description: "Demonstrated ability to deploy applications, monitor operations, and manage enterprise solutions on Google Cloud Platform.",
       skills: ["Kubernetes", "Cloud Functions", "Google Compute Engine", "Cloud Storage", "Cloud SQL"],
-      image: "https://images.credly.com/size/340x340/images/5c9bd5de-9935-4aa4-b109-7cf5ef037b78/image.png",
+      image: "https://images.credly.com/size/680x680/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/image.png",
       credentialUrl: "https://cloud.google.com/certification/cloud-engineer"
     }
   ];
@@ -77,7 +77,7 @@ export function Certifications() {
             {certificates.map((cert, index) => (
               <div 
                 key={index} 
-                className="anime-card flex flex-col h-full transition-transform duration-300 hover:-translate-y-2 group"
+                className="anime-card flex flex-col h-full gap-3 p-4 rounded-lg bg-card/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-accent/5 cursor-pointer"
               >
                 <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
                   <div className="relative w-24 h-24 rounded-full overflow-hidden md:mb-0 mb-4 bg-card flex-shrink-0 border-2 border-accent/20 group-hover:border-accent transition-all">

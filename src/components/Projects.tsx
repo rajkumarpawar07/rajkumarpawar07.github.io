@@ -134,7 +134,7 @@ export function Projects() {
             {projects.map((project, index) => (
               <div 
                 key={index} 
-                className="group anime-card flex flex-col h-full transition-transform duration-300 hover:-translate-y-2 bg-card/70 backdrop-blur-sm cursor-pointer"
+                className="group anime-card flex flex-col h-full gap-3 p-4 rounded-lg bg-card/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-accent/5 cursor-pointer"
                 onClick={() => setSelectedProject(index)}
               >
                 <div className="relative mb-5 overflow-hidden rounded-md aspect-[4/3]">

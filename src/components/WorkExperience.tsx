@@ -97,7 +97,7 @@ export function WorkExperience() {
           
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <Card key={index} className="border border-border hover:border-accent/20 transition-all duration-300 overflow-hidden bg-card/90 backdrop-blur-sm">
+              <Card key={index} className="anime-card flex flex-col h-full gap-3 p-4 rounded-lg bg-card/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-accent/5 cursor-pointer">
                 <CardContent className="p-0">
                   <div className="p-6">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
