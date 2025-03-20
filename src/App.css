@@ -55,15 +55,3 @@
 }
 
 
-.gradient-background {
-  background: linear-gradient(
-    to bottom right,
-    #000 0%,
-    #111 20%,
-    #0d324d 60%,
-    #126872 75%,
-    #372549 100%
-  );
-  min-height: 100vh;
-  width: 100%;
-}

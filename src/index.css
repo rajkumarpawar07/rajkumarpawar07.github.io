@@ -37,6 +37,10 @@
     --ring: 212 27% 84%;
     
     --radius: 0.75rem;
+
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --overlay-gradient: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
   }
 }
 
@@ -68,7 +72,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    background: var(--overlay-gradient);
     z-index: -1;
   }
 

@@ -1,8 +1,13 @@
-
 import { useState, useEffect } from "react";
-import { Menu, X, Youtube } from "lucide-react";
+import { Menu, X, Youtube, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { BrightnessControl } from "@/components/BrightnessControl";
+import { 
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +38,7 @@ export function Navbar() {
       <div className={`max-w-3xl mx-auto ${
         isScrolled 
           ? "bg-black/80 backdrop-blur-md" 
-          : "bg-gradient-to-r from-purple-600/20 via-pink-600/20 to-cyan-500/20 backdrop-blur-md"
+          : "bg-gradient-to-r from-purple-800/20 via-pink-800/20 to-cyan-700/20 backdrop-blur-md"
       } rounded-full px-6 transition-all duration-300`}>
         <div className="flex items-center justify-between h-12">
           <a href="#home" className="flex items-center gap-2 mr-8">
@@ -52,6 +57,25 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
+            
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="hover:bg-transparent transition-all duration-300 hover:scale-110 hover:rotate-12 group"
+                >
+                  <Sun className="h-5 w-5 group-hover:text-accent transition-colors" />
+                  <span className="sr-only">Adjust brightness</span>
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent className="group flex flex-col h-full gap-3 p-4 rounded-lg bg-card/10 backdrop-blur-sm hover:bg-accent/5 cursor-pointer border-0">
+                <div className="">
+                  <h4 className="text-sm font-medium mb-2">Adjust Brightness</h4>
+                  <BrightnessControl />
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
           
           <Sheet>
@@ -88,6 +112,11 @@ export function Navbar() {
                     Blog
                   </a>
                 </nav>
+                
+                <div className="mt-6 px-2">
+                  <h4 className="text-sm font-medium mb-2">Adjust Brightness</h4>
+                  <BrightnessControl />
+                </div>
                 
                 <div className="mt-auto">
                   <div className="flex items-center gap-6 pt-8">
