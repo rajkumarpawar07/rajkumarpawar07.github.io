@@ -60,7 +60,7 @@
     position: relative;
   }
 
-  /* Modify the overlay to make it less transparent (0.8 and 0.9 opacity instead of 0.5 and 0.7) */
+  /* Add an overlay to make text more readable against the forest background */
   body::before {
     content: "";
     position: fixed;
@@ -68,7 +68,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
     z-index: -1;
   }
 
@@ -77,7 +77,35 @@
   }
 }
 
-/* ... keep existing code (anime-card, anime-button, anime-input, glassmorphism, section-container, section-title, section-subtitle classes) */
+@layer components {
+  .anime-card {
+    @apply relative overflow-hidden rounded-lg border border-border bg-card/90 p-6 shadow-md transition-all duration-300 ease-in-out hover:shadow-xl hover:border-accent/50 backdrop-blur-sm;
+  }
+
+  .anime-button {
+    @apply relative inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-all duration-300 ease-in-out hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .anime-input {
+    @apply rounded-md border border-input bg-background px-4 py-2 text-sm transition-all duration-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25;
+  }
+  
+  .glassmorphism {
+    @apply backdrop-blur-md bg-background/80 border border-border;
+  }
+  
+  .section-container {
+    @apply container mx-auto px-4 py-24 md:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-8 animate-fade-in font-anime;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-muted-foreground mb-16 max-w-2xl mx-auto animate-fade-in delay-100 font-body;
+  }
+}
 
 @layer utilities {
   .animation-delay-100 {
@@ -115,19 +143,6 @@
   .text-gradient-anime {
     @apply bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text;
   }
-}
-
-/* Also update the glassmorphism utility class to be less transparent */
-.glassmorphism {
-  @apply backdrop-blur-md bg-background/90 border border-border;
-}
-
-/* Update any transparencies in navbar and other components */
-.anime-forest-card {
-  background: rgba(30, 41, 59, 0.9);
-  border: 1px solid rgba(139, 92, 246, 0.3);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(8px);
 }
 
 /* Anime-themed custom scrollbar */
