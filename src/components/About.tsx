@@ -41,19 +41,15 @@ export function About() {
   const galleryImages = [
     {
       src: "/lovable-uploads/ec25773d-152e-4ee7-a4da-051fabdfae5f.png",
-      alt: "Me working on a project"
+      alt: "Professional portrait"
     },
     {
-      src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
-      alt: "Coding session"
+      src: "/lovable-uploads/8a9638bc-354a-4947-8c9d-f435c00cc3ed.png",
+      alt: "Professional headshot"
     },
     {
       src: "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?q=80&w=1000&auto=format&fit=crop",
       alt: "At a tech conference"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop",
-      alt: "Client meeting"
     }
   ];
 
@@ -110,16 +106,16 @@ export function About() {
                 the test of time.
               </p>
               
-              <p className="text-muted-foreground text-center md:text-left font-body">
+              <p className="text-muted-foreground mb-8 text-center md:text-left font-body">
                 When I'm not coding, you can find me exploring new technologies, contributing 
                 to open-source projects, or enjoying anime. I'm always open to new opportunities 
                 and challenges.
               </p>
               
-              {/* Photo Gallery */}
-              <div className="mt-12 w-full">
-                <h3 className="text-xl font-semibold mb-6 font-anime text-center md:text-left">My Journey</h3>
-                <div className="relative rounded-lg overflow-hidden bg-card/60 backdrop-blur-sm border border-border p-1">
+              {/* Photo Gallery - Redesigned */}
+              <div className="w-full grid grid-cols-1 gap-6 mt-4">
+                <div className="relative rounded-xl overflow-hidden border border-anime-purple/30 shadow-lg shadow-anime-purple/10">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-anime-purple/20 to-anime-pink/20 z-0"></div>
                   <Carousel
                     opts={{
                       align: "start",
@@ -127,24 +123,45 @@ export function About() {
                     }}
                     className="w-full"
                     autoplay={autoPlay}
-                    onMouseEnter={() => setAutoPlay(false)}
-                    onMouseLeave={() => setAutoPlay(true)}
                   >
                     <CarouselContent>
                       {galleryImages.map((image, index) => (
                         <CarouselItem key={index} className="basis-full">
-                          <div className="relative overflow-hidden rounded-md aspect-video">
+                          <div className="relative aspect-[16/9] overflow-hidden rounded-md">
                             <img
                               src={image.src}
                               alt={image.alt}
-                              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                              className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                           </div>
                         </CarouselItem>
                       ))}
                     </CarouselContent>
-                    <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 border-none text-white" />
-                    <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 border-none text-white" />
+                    <div className="absolute z-10 bottom-4 left-0 right-0 flex justify-center gap-2">
+                      {galleryImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => {
+                            if (autoPlay) setAutoPlay(false);
+                          }}
+                          className="w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all"
+                          aria-label={`Go to slide ${index + 1}`}
+                        />
+                      ))}
+                    </div>
+                    <CarouselPrevious 
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/20 backdrop-blur-sm hover:bg-background/40 border-anime-purple/30 text-white h-8 w-8" 
+                      onClick={() => {
+                        if (autoPlay) setAutoPlay(false);
+                      }}
+                    />
+                    <CarouselNext 
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/20 backdrop-blur-sm hover:bg-background/40 border-anime-purple/30 text-white h-8 w-8" 
+                      onClick={() => {
+                        if (autoPlay) setAutoPlay(false);
+                      }}
+                    />
                   </Carousel>
                 </div>
               </div>
