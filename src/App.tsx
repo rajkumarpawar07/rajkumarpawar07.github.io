@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./lib/ThemeProvider";
 import { BrightnessProvider } from "./components/BrightnessContext";
+import CursorStarsEffect from "./components/CursorStarsEffect";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -15,6 +16,7 @@ const App = () => (
     <ThemeProvider defaultTheme="dark" forcedTheme="dark">
       <BrightnessProvider>
         <TooltipProvider>
+          <CursorStarsEffect />
           <Toaster />
           <Sonner />
           <BrowserRouter>
