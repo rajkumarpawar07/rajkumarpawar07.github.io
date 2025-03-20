@@ -1,6 +1,6 @@
 
 import { useRef, useEffect, useState } from "react";
-import { Code, Database, Layout, Layers, Server, ChevronLeft, ChevronRight } from "lucide-react";
+import { Code, Database, Layout, Layers, Server } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { 
   Carousel,
