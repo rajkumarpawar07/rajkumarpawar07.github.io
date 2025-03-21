@@ -3,6 +3,13 @@ import { useRef, useEffect, useState } from "react";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectDialog } from "@/components/ProjectDialog";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 export function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -138,12 +145,21 @@ export function Projects() {
                 onClick={() => setSelectedProject(index)}
               >
                 <div className="relative mb-5 overflow-hidden rounded-md aspect-[4/3]">
-                  <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  <Carousel className="w-full" autoplay={true}>
+                    <CarouselContent>
+                      {project.images.map((image, imgIndex) => (
+                        <CarouselItem key={imgIndex}>
+                          <div className="overflow-hidden rounded-md">
+                            <img 
+                              src={image.src} 
+                              alt={image.alt} 
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                  </Carousel>
                 </div>
                 
                 <h3 className="text-xl font-semibold mb-2 font-anime">{project.title}</h3>

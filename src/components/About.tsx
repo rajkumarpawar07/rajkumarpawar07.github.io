@@ -40,9 +40,13 @@ export function About() {
         <div className="max-w-5xl mx-auto">
           <AboutHeading />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <AboutBio />
-            <AboutImageGallery />
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div className="md:col-span-5">
+              <AboutBio />
+            </div>
+            <div className="md:col-span-7">
+              <AboutImageGallery />
+            </div>
           </div>
         </div>
       </div>

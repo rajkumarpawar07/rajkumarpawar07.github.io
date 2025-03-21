@@ -1,8 +1,14 @@
 
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ArrowRight, ExternalLink, Github, X } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { ExternalLink, Github } from "lucide-react";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 interface ProjectImage {
   src: string;
@@ -25,118 +31,29 @@ interface ProjectDialogProps {
 }
 
 export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
-  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
-  
-  // Auto-play functionality
-  useEffect(() => {
-    if (autoPlay && project.images.length > 1) {
-      autoPlayRef.current = setInterval(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
-      }, 4000);
-    }
-    
-    return () => {
-      if (autoPlayRef.current) {
-        clearInterval(autoPlayRef.current);
-      }
-    };
-  }, [autoPlay, project.images.length]);
-  
-  const nextImage = () => {
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-      setAutoPlay(false);
-    }
-    setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
-  };
-  
-  const prevImage = () => {
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
-      setAutoPlay(false);
-    }
-    setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
-  };
-  
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl w-[90vw] max-h-[90vh] overflow-y-auto p-0 border border-border/40 bg-card/95 backdrop-blur-lg flex flex-col">
-        <div className="sticky top-0 z-20 flex justify-end p-2 bg-black/50">
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={() => onOpenChange(false)} 
-            className="rounded-full bg-black/40 hover:bg-black/60 h-8 w-8"
-          >
-            <X className="h-4 w-4" />
-          </Button>
-        </div>
-        
         <div className="w-full bg-black relative overflow-hidden">
-          {/* Image gallery */}
-          <div 
-            className="relative w-full" 
-            style={{ height: "40vh" }}
-            onMouseEnter={() => setAutoPlay(false)}
-            onMouseLeave={() => setAutoPlay(true)}
-          >
-            {project.images.map((image, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-500 ${
-                  index === currentImageIndex ? "opacity-100" : "opacity-0 pointer-events-none"
-                }`}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-contain bg-black"
-                />
-              </div>
-            ))}
-            
-            {/* Navigation arrows */}
-            {project.images.length > 1 && (
-              <>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={prevImage}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-black/40 hover:bg-black/60 z-10"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={nextImage}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-black/40 hover:bg-black/60 z-10"
-                >
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-                
-                {/* Image indicators */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                  {project.images.map((_, index) => (
-                    <button
-                      key={index}
-                      className={`w-2 h-2 rounded-full transition-all ${
-                        index === currentImageIndex ? "bg-white scale-125" : "bg-white/50"
-                      }`}
-                      onClick={() => {
-                        setCurrentImageIndex(index);
-                        if (autoPlayRef.current) {
-                          clearInterval(autoPlayRef.current);
-                          setAutoPlay(false);
-                        }
-                      }}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
+          {/* Image carousel */}
+          <div style={{ height: "50vh" }}>
+            <Carousel className="w-full h-full" autoplay={true}>
+              <CarouselContent className="h-full">
+                {project.images.map((image, index) => (
+                  <CarouselItem key={index} className="h-full">
+                    <div className="flex items-center justify-center h-full p-1">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-contain bg-black"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
           </div>
         </div>
         
