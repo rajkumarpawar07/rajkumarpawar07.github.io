@@ -17,7 +17,7 @@ export function TechnologiesSection() {
 
   return (
     <div>
-      <h3 className="text-xl font-semibold mt-8 mb-6 font-anime">Technologies I Work With</h3>
+      <h3 className="text-xl font-semibold mb-6 font-anime">Technologies I Work With</h3>
       
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech, index) => (

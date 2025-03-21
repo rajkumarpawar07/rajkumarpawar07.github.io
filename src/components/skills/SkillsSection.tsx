@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Code, Database, Layout, Layers, Server } from "lucide-react";
+import { Code, Database, Layout, Layers, Server, Terminal } from "lucide-react";
 
 export function SkillsSection() {
   const skills = [
@@ -9,7 +9,7 @@ export function SkillsSection() {
     { name: "Database Design", icon: <Database className="h-5 w-5" /> },
     { name: "API Development", icon: <Code className="h-5 w-5" /> },
     { name: "System Architecture", icon: <Layers className="h-5 w-5" /> },
-    { name: "DevOps", icon: <Server className="h-5 w-5" /> },
+    { name: "DevOps", icon: <Terminal className="h-5 w-5" /> },
   ];
 
   return (
