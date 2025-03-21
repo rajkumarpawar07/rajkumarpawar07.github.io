@@ -1,7 +1,7 @@
 
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import { 
   Carousel,
   CarouselContent,
@@ -51,8 +51,12 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-4" />
-              <CarouselNext className="right-4" />
+              <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border-none">
+                <ChevronLeft className="h-6 w-6 text-white" />
+              </CarouselPrevious>
+              <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border-none">
+                <ChevronRight className="h-6 w-6 text-white" />
+              </CarouselNext>
             </Carousel>
           </div>
         </div>
