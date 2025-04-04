@@ -40,7 +40,7 @@ export function Projects() {
 
   const projects = [
     {
-      title: "Anime Tracker",
+      title: "TStore",
       description: "A mobile application to track your favorite anime series, episodes, and get notifications for new releases.",
       longDescription: "Anime Tracker is a comprehensive mobile app designed for anime enthusiasts to keep track of their favorite shows. The app allows users to create watchlists, receive notifications for new episodes, track viewing progress, and discover new shows based on their preferences.",
       tags: ["React Native", "Firebase", "Redux", "Jikan API"],
@@ -52,13 +52,64 @@ export function Projects() {
         "Offline viewing capability",
         "Social sharing functionality"
       ],
-      image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1000&auto=format&fit=crop",
+      image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/cfp4amx1u8yejyzn1qmr.png",
       images: [
-        { src: "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1000&auto=format&fit=crop", alt: "Anime Tracker App" },
-        { src: "https://images.unsplash.com/photo-1614583224978-f05ce51ef5fa?q=80&w=1000&auto=format&fit=crop", alt: "Watchlist Feature" },
-        { src: "https://images.unsplash.com/photo-1586373658649-efc69c42be45?q=80&w=1000&auto=format&fit=crop", alt: "Notification Screen" },
-        { src: "https://images.unsplash.com/photo-1541562232579-512a21360020?q=80&w=1000&auto=format&fit=crop", alt: "Search Feature" },
-        { src: "https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?q=80&w=1000&auto=format&fit=crop", alt: "User Profile" }
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645398/TStore/sw4km136gdmdpnu74rhw.png", alt: "Anime Tracker App" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645398/TStore/htnj9wyumt8clrli1xjk.png", alt: "Notification Screen" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/afw1llzehzyxv1gc9b9f.png", alt: "Watchlist Feature" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/jtqudfdrqkpk4dz3jshp.png", alt: "Search Feature" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/kk0iworqekprdiuzlexq.png", alt: "User Profile" }
+      ],
+      githubUrl: "https://github.com",
+      liveUrl: "https://example.com",
+    },
+    {
+      title: "Playflex",
+      description: "A social app for cosplayers to share their costumes, find events, and connect with other enthusiasts in their area.",
+      longDescription: "Cosplay Companion is the ultimate social platform for cosplay enthusiasts. The app connects cosplayers with events, photographers, and fellow community members. Users can showcase their work, get inspired by others, and coordinate meetups at conventions.",
+      tags: ["React Native", "GraphQL", "AWS Amplify", "Maps API"],
+      technologies: ["React Native", "GraphQL", "AWS Amplify", "Maps API", "Cloudinary", "Auth0"],
+      features: [
+        "Cosplay portfolio creation and sharing",
+        "Convention event discovery and calendar",
+        "Community messaging and collaboration",
+        "Location-based cosplayer finder",
+        "Costume progress tracking"
+      ],
+      image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647160/Playflex/lskqouthnpktfan4agdw.png",
+      images: [
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647160/Playflex/lskqouthnpktfan4agdw.png", alt: "Cosplay Companion App" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647161/Playflex/ixbinipvzljew1knzb4s.png", alt: "Events Screen" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647168/Playflex/kcsdlqfxpefnzqqfst79.png", alt: "Community Feed" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647169/Playflex/jq5mowc5l06zh5d1xq8r.png", alt: "Convention Map" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647170/Playflex/sinuv3yfbpsq8eoisv5z.png", alt: "Convention Map" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647168/Playflex/nhhujkv58azhhtoy46xe.png", alt: "User Profile" },
+      ],
+      githubUrl: "https://github.com",
+      liveUrl: "https://example.com",
+    },
+    {
+      title: "Bigga",
+      description: "Developed Bigga, a Flutter and Flame-based gaming app with weekly game additions, real cash rewards, and secure KYC verification.",
+      longDescription: "Cosplay Companion is the ultimate social platform for cosplay enthusiasts. The app connects cosplayers with events, photographers, and fellow community members. Users can showcase their work, get inspired by others, and coordinate meetups at conventions.",
+      tags: ["React Native", "GraphQL", "AWS Amplify", "Maps API"],
+      technologies: ["React Native", "GraphQL", "AWS Amplify", "Maps API", "Cloudinary", "Auth0"],
+      features: [
+        "Developed a dynamic gaming platform using Flutter and Flame, offering users access to multiple games with a new game added every week.",
+        "Convention event discovery and calendar",
+        "Community messaging and collaboration",
+        "Location-based cosplayer finder",
+        "Costume progress tracking"
+      ],
+      image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647460/Bigga/feesi0wah8k3to240vll.png",
+      images: [
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647460/Bigga/feesi0wah8k3to240vll.png", alt: "Cosplay Companion App" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647441/Bigga/dngu70uht7c7ndrhxgrj.png", alt: "Community Feed" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647447/Bigga/d2sxf2ure11nh8pmtydk.png", alt: "Events Screen" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647440/Bigga/citi6bovazkgmitmikk4.png", alt: "Convention Map" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647438/Bigga/kqc0gyj72620uzwizvdq.png", alt: "Convention Map" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647436/Bigga/s0bfv22u1jd3a5qxgbqz.png", alt: "User Profile" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647436/Bigga/uom2qpv1rlvammiullvg.png", alt: "User Profile" },
       ],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
@@ -76,41 +127,23 @@ export function Projects() {
         "Advanced search and filtering",
         "Reading history and statistics"
       ],
-      image: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?q=80&w=1000&auto=format&fit=crop",
+      image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742646691/Tack%20Tik/ogdkdrxcp5uhnw6ct7hy.png",
       images: [
-        { src: "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?q=80&w=1000&auto=format&fit=crop", alt: "Manga Reader App" },
-        { src: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop", alt: "Reading View" },
-        { src: "https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1000&auto=format&fit=crop", alt: "Library Screen" },
-        { src: "https://images.unsplash.com/photo-1598618443855-232ee0f819f6?q=80&w=1000&auto=format&fit=crop", alt: "Search Results" },
-        { src: "https://images.unsplash.com/photo-1588497859490-85d1c17db96d?q=80&w=1000&auto=format&fit=crop", alt: "Settings Page" }
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742646676/Tack%20Tik/opfehxcs2n68h4d6xo4e.png", alt: "Search Results" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742646670/Tack%20Tik/igodqdk5eiajsy7wew5n.png", alt: "Search Results" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742646691/Tack%20Tik/ogdkdrxcp5uhnw6ct7hy.png", alt: "Manga Reader App" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742646690/Tack%20Tik/ksoeqskry8xweia4okt6.png", alt: "Reading View" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742646684/Tack%20Tik/qqopxd2ldies98r8tppj.png", alt: "Library Screen" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742646682/Tack%20Tik/hwxhkl9hrtewuhenguv2.png", alt: "Search Results" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742646676/Tack%20Tik/ankh3pivtldyqqzlaxyo.png", alt: "Settings Page" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742646667/Tack%20Tik/uwm1t3za5fuxwbqxrfpc.png", alt: "Search Results" },
+
+
       ],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
     },
-    {
-      title: "Cosplay Companion",
-      description: "A social app for cosplayers to share their costumes, find events, and connect with other enthusiasts in their area.",
-      longDescription: "Cosplay Companion is the ultimate social platform for cosplay enthusiasts. The app connects cosplayers with events, photographers, and fellow community members. Users can showcase their work, get inspired by others, and coordinate meetups at conventions.",
-      tags: ["React Native", "GraphQL", "AWS Amplify", "Maps API"],
-      technologies: ["React Native", "GraphQL", "AWS Amplify", "Maps API", "Cloudinary", "Auth0"],
-      features: [
-        "Cosplay portfolio creation and sharing",
-        "Convention event discovery and calendar",
-        "Community messaging and collaboration",
-        "Location-based cosplayer finder",
-        "Costume progress tracking"
-      ],
-      image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?q=80&w=1000&auto=format&fit=crop",
-      images: [
-        { src: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?q=80&w=1000&auto=format&fit=crop", alt: "Cosplay Companion App" },
-        { src: "https://images.unsplash.com/photo-1568083608325-ded9eaab4113?q=80&w=1000&auto=format&fit=crop", alt: "Events Screen" },
-        { src: "https://images.unsplash.com/photo-1536243298747-ea8874136d64?q=80&w=1000&auto=format&fit=crop", alt: "Community Feed" },
-        { src: "https://images.unsplash.com/photo-1566577739112-5180d4bf9390?q=80&w=1000&auto=format&fit=crop", alt: "User Profile" },
-        { src: "https://images.unsplash.com/photo-1612036782180-6f0822368025?q=80&w=1000&auto=format&fit=crop", alt: "Convention Map" }
-      ],
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
-    },
+  
   ];
 
   return (
@@ -128,12 +161,12 @@ export function Projects() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 font-anime">
-                Mobile App Projects
+               Projects Showcase
               </h2>
-              <p className="text-muted-foreground max-w-2xl font-body">
+              {/* <p className="text-muted-foreground max-w-2xl font-body">
                 Here are some of my recent mobile application projects. Each one presented unique challenges
                 and opportunities to learn and grow as a developer.
-              </p>
+              </p> */}
             </div>
           </div>
           

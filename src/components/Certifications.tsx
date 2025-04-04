@@ -67,9 +67,9 @@ export function Certifications() {
               <h2 className="text-3xl md:text-4xl font-bold mb-4 font-anime">
                 Professional Certifications
               </h2>
-              <p className="text-muted-foreground max-w-2xl font-body">
+              {/* <p className="text-muted-foreground max-w-2xl font-body">
                 Industry-recognized certifications validating my cloud engineering expertise and continuous learning commitment.
-              </p>
+              </p> */}
             </div>
           </div>
           

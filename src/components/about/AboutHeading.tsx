@@ -8,9 +8,9 @@ export function AboutHeading() {
         About Me
       </div>
       
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 font-anime text-white">
+      {/* <h2 className="text-3xl md:text-4xl font-bold mb-8 font-anime text-white">
         Code, Cloud & Scalability – My Passion, Your Solution
-      </h2>
+      </h2> */}
     </>
   );
 }

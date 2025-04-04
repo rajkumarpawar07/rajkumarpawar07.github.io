@@ -8,11 +8,11 @@ export function Footer() {
     <footer className="py-12 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8"> 
             <div className="mb-6 md:mb-0">
               <a href="#home" className="flex items-center gap-2 mb-4">
                 <Code className="h-6 w-6 text-accent" />
-                <span className="font-display text-xl font-bold">DevAnime</span>
+                <span className="font-display text-xl font-bold">Rajkumar Pawar</span>
               </a>
               
               <p className="text-muted-foreground max-w-md">
@@ -92,7 +92,7 @@ export function Footer() {
                 <ul className="space-y-3">
                   <li>
                     <a 
-                      href="mailto:hello@example.com" 
+                      href="rajkumarpawar0707@gmail.com" 
                       className="text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2"
                     >
                       <Mail className="h-4 w-4" />
@@ -106,7 +106,7 @@ export function Footer() {
           
           <div className="pt-8 border-t border-border text-center sm:flex sm:items-center sm:justify-between">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} DevAnime. All rights reserved.
+              © {currentYear} Rajkumar Pawar. All rights reserved.
             </p>
             
             <p className="mt-4 sm:mt-0 text-sm text-muted-foreground flex items-center justify-center gap-1">

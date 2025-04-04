@@ -4,11 +4,11 @@ import { Code, Database, Layout, Layers, Server, Terminal } from "lucide-react";
 
 export function SkillsSection() {
   const skills = [
-    { name: "Frontend Development", icon: <Layout className="h-5 w-5" /> },
+    { name: "Mobile App Development", icon: <Layout className="h-5 w-5" /> },
     { name: "Backend Development", icon: <Server className="h-5 w-5" /> },
     { name: "Database Design", icon: <Database className="h-5 w-5" /> },
     { name: "API Development", icon: <Code className="h-5 w-5" /> },
-    { name: "System Architecture", icon: <Layers className="h-5 w-5" /> },
+    { name: "Cloud Architecture", icon: <Layers className="h-5 w-5" /> },
     { name: "DevOps", icon: <Terminal className="h-5 w-5" /> },
   ];
 

@@ -1,4 +1,3 @@
-
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
@@ -9,6 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
+import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
 
 interface ProjectImage {
   src: string;
@@ -33,106 +34,128 @@ interface ProjectDialogProps {
 export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl w-[90vw] max-h-[90vh] overflow-y-auto p-0 border border-border/40 bg-card/95 backdrop-blur-lg flex flex-col">
-        <div className="w-full bg-black relative overflow-hidden">
-          {/* Image carousel */}
-          <div style={{ height: "50vh" }}>
-            <Carousel className="w-full h-full" autoplay={true}>
+      <DialogContent className="max-w-5xl w-[95vw] max-h-[95vh] overflow-hidden p-0 border-0 bg-background/95 backdrop-blur-xl rounded-xl shadow-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+          {/* Left side - Image carousel */}
+          <div className="bg-gradient-to-br from-black to-gray-900 relative overflow-hidden h-[40vh] md:h-auto">
+            <Carousel className="w-full h-full">
               <CarouselContent className="h-full">
                 {project.images.map((image, index) => (
                   <CarouselItem key={index} className="h-full">
-                    <div className="flex items-center justify-center h-full p-1">
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                      className="flex items-center justify-center h-full"
+                    >
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-full object-contain bg-black"
+                        className="w-full h-full object-cover"
                       />
-                    </div>
+                    </motion.div>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border-none">
-                <ChevronLeft className="h-6 w-6 text-white" />
+              <CarouselPrevious className="left-4 bg-black hover:bg-black/80 border-none">
+                <ChevronLeft className="h-5 w-5 text-white" />
               </CarouselPrevious>
-              <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm border-none">
-                <ChevronRight className="h-6 w-6 text-white" />
+              <CarouselNext className="right-4 bg-black hover:bg-black/80 border-none">
+                <ChevronRight className="h-5 w-5 text-white" />
               </CarouselNext>
             </Carousel>
           </div>
-        </div>
-        
-        <div className="p-6 z-10 bg-card">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold font-anime">{project.title}</DialogTitle>
-            <DialogDescription className="text-muted-foreground">
-              {project.description}
-            </DialogDescription>
-          </DialogHeader>
           
-          <div className="mt-6 space-y-5">
-            {project.longDescription && (
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold font-anime">About this project</h3>
-                <p className="text-sm text-muted-foreground">{project.longDescription}</p>
-              </div>
-            )}
+          {/* Right side - Content */}
+          <div className="p-6 overflow-y-auto max-h-[60vh] md:max-h-[95vh]">
+            <DialogHeader className="mb-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <DialogTitle className="text-3xl font-bold font-anime bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
+                  {project.title}
+                </DialogTitle>
+                <DialogDescription className="text-muted-foreground mt-2 text-base">
+                  {project.description}
+                </DialogDescription>
+              </motion.div>
+            </DialogHeader>
             
-            {project.features && project.features.length > 0 && (
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold font-anime">Key Features</h3>
-                <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                  {project.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            
-            {project.technologies && project.technologies.length > 0 && (
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold font-anime">Technologies</h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, idx) => (
-                    <span 
-                      key={idx} 
-                      className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground font-body"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+            <motion.div 
+              className="space-y-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              {project.longDescription && (
+                <div className="space-y-3">
+                  <h3 className="text-xl font-semibold font-anime">About</h3>
+                  <p className="text-muted-foreground leading-relaxed">{project.longDescription}</p>
+                </div>
+              )}
+              
+              {project.technologies && project.technologies.length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="text-xl font-semibold font-anime">Technologies</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, idx) => (
+                      <Badge 
+                        key={idx} 
+                        variant="secondary"
+                        className="px-3 py-1 text-sm font-medium rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {project.features && project.features.length > 0 && (
+                <div className="space-y-3">
+                  <h3 className="text-xl font-semibold font-anime">Key Features</h3>
+                  <ul className="space-y-2">
+                    {project.features.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="inline-block h-5 w-5 rounded-full bg-accent/20 text-accent flex-shrink-0 flex items-center justify-center text-xs mt-0.5">
+                          {index + 1}
+                        </span>
+                        <span className="text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-between items-center">
+                <div className="flex items-center gap-4">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex items-center gap-2 border-border/40 hover:bg-accent/5 hover:text-accent transition-colors"
+                    asChild
+                  >
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4" />
+                      <span>Code</span>
+                    </a>
+                  </Button>
+                  
+                  <Button 
+                    className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-medium transition-all shadow-md hover:shadow-lg"
+                    size="sm"
+                    asChild
+                  >
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <span>Live Demo</span>
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
                 </div>
               </div>
-            )}
-            
-            <div className="pt-4 flex justify-between items-center">
-              <div className="flex items-center gap-3">
-                <a 
-                  href={project.githubUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="GitHub repository"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-                <a 
-                  href={project.liveUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label="Live site"
-                >
-                  <ExternalLink className="h-5 w-5" />
-                </a>
-              </div>
-              
-              <Button className="anime-button font-anime bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600" asChild>
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                  View Live Project
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </DialogContent>

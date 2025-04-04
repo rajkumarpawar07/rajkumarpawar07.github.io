@@ -3,16 +3,35 @@ import React from "react";
 
 export function TechnologiesSection() {
   const technologies = [
-    {name: "React", logo: "https://cdn.worldvectorlogo.com/logos/react-2.svg"},
-    {name: "TypeScript", logo: "https://cdn.worldvectorlogo.com/logos/typescript.svg"},
+    {name: "Java", logo: "https://cdn.worldvectorlogo.com/logos/java-4.svg"},
+    {name: "Golang", logo: "https://cdn.worldvectorlogo.com/logos/golang-1.svg"},
+    {name: "Dart", logo: "https://cdn.worldvectorlogo.com/logos/dart.svg"},
+    {name: "C++", logo: "https://cdn.worldvectorlogo.com/logos/c.svg"},
+    {name: "Python", logo: "https://cdn.worldvectorlogo.com/logos/python-5.svg"},
+  
+    {name: "Flutter", logo: "https://cdn.worldvectorlogo.com/logos/flutter-logo.svg"},
+    {name: "Android", logo: "https://cdn.worldvectorlogo.com/logos/android-logomark.svg"},
+    {name: "React Native", logo: "https://cdn.worldvectorlogo.com/logos/react-native-1.svg"},
     {name: "Node.js", logo: "https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg"},
-    {name: "Next.js", logo: "https://cdn.worldvectorlogo.com/logos/nextjs-2.svg"},
-    {name: "GraphQL", logo: "https://cdn.worldvectorlogo.com/logos/graphql.svg"},
+    {name: "Firebase", logo: "https://cdn.worldvectorlogo.com/logos/firebase-1.svg"},
+    {name: "GraphQL", logo: "https://cdn.worldvectorlogo.com/logos/graphql-logo-2.svg"},
     {name: "MongoDB", logo: "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg"},
+    {name: "MySQL", logo: "https://cdn.worldvectorlogo.com/logos/mysql-logo-pure.svg"},
     {name: "PostgreSQL", logo: "https://cdn.worldvectorlogo.com/logos/postgresql.svg"},
+    {name: "Git", logo: "https://cdn.worldvectorlogo.com/logos/git-icon.svg"},
+    {name: "GitHub", logo: "https://cdn.worldvectorlogo.com/logos/github-icon-2.svg"},
     {name: "AWS", logo: "https://cdn.worldvectorlogo.com/logos/aws-2.svg"},
-    {name: "Docker", logo: "https://cdn.worldvectorlogo.com/logos/docker-3.svg"},
-    {name: "Git", logo: "https://cdn.worldvectorlogo.com/logos/git-icon.svg"}
+    {name: "Google Cloud", logo: "https://cdn.worldvectorlogo.com/logos/google-cloud-1.svg"},
+    {name: "DevOps", logo: "https://cdn.worldvectorlogo.com/logos/devops-2.svg"},
+    {name: "Docker", logo: "https://cdn.worldvectorlogo.com/logos/docker-4.svg"},
+    {name: "Genkins", logo: "https://cdn.worldvectorlogo.com/logos/jenkins-1.svg"},
+    {name: "Grafana", logo: "https://cdn.worldvectorlogo.com/logos/grafana.svg"},
+    {name: "Kubernetes", logo: "https://cdn.worldvectorlogo.com/logos/kubernets.svg"},
+    {name: "Terraform", logo: "https://www.svgrepo.com/show/374122/terraform.svg"},
+   
+   
+   
+
   ];
 
   return (

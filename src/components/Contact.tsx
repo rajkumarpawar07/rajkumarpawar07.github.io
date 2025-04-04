@@ -71,10 +71,10 @@ export function Contact() {
             Let's Work Together
           </h2>
           
-          <p className="text-muted-foreground max-w-2xl mb-12">
+          {/* <p className="text-muted-foreground max-w-2xl mb-12">
             Have a project in mind or want to discuss a potential collaboration?
             Feel free to reach out. I'm always open to new opportunities and challenges.
-          </p>
+          </p> */}
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
@@ -161,7 +161,7 @@ export function Contact() {
                         href="mailto:hello@example.com" 
                         className="text-muted-foreground hover:text-accent transition-colors"
                       >
-                        hello@example.com
+                        rajkumarpawar0707@gmail.com
                       </a>
                     </div>
                   </li>
@@ -176,7 +176,7 @@ export function Contact() {
                         href="tel:+11234567890" 
                         className="text-muted-foreground hover:text-accent transition-colors"
                       >
-                        +1 (123) 456-7890
+                        +91 9146530955
                       </a>
                     </div>
                   </li>
@@ -188,7 +188,7 @@ export function Contact() {
                     <div>
                       <p className="text-sm font-medium mb-1">Location</p>
                       <p className="text-muted-foreground">
-                        San Francisco, California
+                        Pune, Maharashtra
                       </p>
                     </div>
                   </li>
