@@ -39,72 +39,8 @@ export function Projects() {
   }, []);
 
   const projects = [
-    {
-      title: "TStore",
-      description: "TSore is a full-stack flutter e-Commerce application, ensuring seamless functionality on both Android and IOS platforms with different categories to shop.",
-      // longDescription: "Anime Tracker is a comprehensive mobile app designed for anime enthusiasts to keep track of their favorite shows. The app allows users to create watchlists, receive notifications for new episodes, track viewing progress, and discover new shows based on their preferences.",
-      tags: ["Flutter", "Firebase", "Getx", "Dart", "Google-Auth"],
-      technologies: ["Flutter", "Firebase", "Getx", "Dart", "Google-Auth"],
-      features: [
     
-        "Multi-Category Shopping Experience",
-        "Real-Time Sync with Robust State & Event Management",
-        " Firebase-Powered Secure Backend",
-      ],
-      image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/cfp4amx1u8yejyzn1qmr.png",
-      images: [
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645398/TStore/sw4km136gdmdpnu74rhw.png", alt: "Anime Tracker App" },
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645398/TStore/htnj9wyumt8clrli1xjk.png", alt: "Notification Screen" },
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/afw1llzehzyxv1gc9b9f.png", alt: "Watchlist Feature" },
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/jtqudfdrqkpk4dz3jshp.png", alt: "Search Feature" },
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/kk0iworqekprdiuzlexq.png", alt: "User Profile" }
-      ],
-      githubUrl: "https://github.com/rajkumarpawar07/tStore",
-      liveUrl: "https://example.com",
-    },
-    {
-      title: "Playflex",
-      description: "A feature-rich streaming app built with Flutter, offering movies, TV shows, and web series with a smooth, interactive UI. It includes AI voice control, real-time sentiment analysis, and dynamic content powered by TMDB and Flask APIs.",
-      // longDescription: "Cosplay Companion is the ultimate social platform for cosplay enthusiasts. The app connects cosplayers with events, photographers, and fellow community members. Users can showcase their work, get inspired by others, and coordinate meetups at conventions.",
-      tags:[
-        "Flutter",
-        "Firebase",
-        "Alan AI",
-        "Naive Bayes (for ML)",
-        "Flask",
-        "TMDB API"
-      ],
-      technologies: [
-        "Flutter",
-        "GetX",
-        "Firebase Authentication",
-        "Firebase Firestore",
-        "Firebase Storage",
-        "Alan AI",
-        "Naive Bayes (for ML)",
-        "Flask",
-        "TMDB API"
-      ],
-      features: [
-        "All-in-one streaming of movies, TV shows, and web series",
-        "AI voice assistant integration using Alan for hands-free control",
-        "Sentiment analysis on IMDb reviews using Naive Bayes model",
-        "RESTful Flask APIs for seamless ML model integration",
-        "Dynamic content fetching using TMDB API for movie details"
-      ],
-      
-      image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647160/Playflex/lskqouthnpktfan4agdw.png",
-      images: [
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647160/Playflex/lskqouthnpktfan4agdw.png", alt: "Cosplay Companion App" },
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647161/Playflex/ixbinipvzljew1knzb4s.png", alt: "Events Screen" },
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647168/Playflex/kcsdlqfxpefnzqqfst79.png", alt: "Community Feed" },
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647169/Playflex/jq5mowc5l06zh5d1xq8r.png", alt: "Convention Map" },
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647170/Playflex/sinuv3yfbpsq8eoisv5z.png", alt: "Convention Map" },
-        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647168/Playflex/nhhujkv58azhhtoy46xe.png", alt: "User Profile" },
-      ],
-      githubUrl: "https://github.com/rajkumarpawar07/playflex-video-streaming-flutter-application",
-      liveUrl: "https://example.com",
-    },
+    
     {
       title: "Bigga",
       description: "Developed Bigga, a Flutter and Flame-based gaming app with weekly game releases, real cash rewards, and secure KYC verification.",
@@ -183,6 +119,118 @@ export function Projects() {
 
       ],
       githubUrl: "https://github.com/rajkumarpawar07/Tack-tik",
+      liveUrl: "https://example.com",
+    },
+    {
+      title: "Jenzy",
+      description: "Developed Jguzy, a color meditation app with theme customization and secure payment integration to enhance user relaxation and focus.",
+      // longDescription: "Anime Tracker is a comprehensive mobile app designed for anime enthusiasts to keep track of their favorite shows. The app allows users to create watchlists, receive notifications for new episodes, track viewing progress, and discover new shows based on their preferences.",
+      tags: ["Flutter", "Firebase", "GetX", "Google Play Subscription", "Custom Algorithm"],
+      technologies: ["Flutter", "Firebase", "GetX", "Google Play Subscription", "Custom Algorithm"],
+      features: [
+        "Color-based meditation for relaxation and focus",
+        "Dynamic light and dark themes for personalized experiences",
+        "Secure in-app purchases through integrated payment gateway"
+      ],
+      image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744218560/Jenzy/uo3v5egsok06hcfe6inc.png",
+      images: [
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744218560/Jenzy/uo3v5egsok06hcfe6inc.png", alt: "" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744218560/Jenzy/sbl5wi2kb4bmr9ose2sx.png", alt: "" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744218560/Jenzy/aah7ufqk1qyntpwilm31.png", alt: "" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744218560/Jenzy/oj7jgud67jjerawih9za.png", alt: "" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744218560/Jenzy/kgmzglp4qlb40my1nziv.png", alt: "" }
+      ],
+      githubUrl: "https://github.com/rajkumarpawar07/Jenzy",
+      liveUrl: "https://example.com",
+    },
+    {
+      title: "TStore",
+      description: "TSore is a full-stack flutter e-Commerce application, ensuring seamless functionality on both Android and IOS platforms with different categories to shop.",
+      // longDescription: "Anime Tracker is a comprehensive mobile app designed for anime enthusiasts to keep track of their favorite shows. The app allows users to create watchlists, receive notifications for new episodes, track viewing progress, and discover new shows based on their preferences.",
+      tags: ["Flutter", "Firebase", "Getx", "Dart", "Google-Auth"],
+      technologies: ["Flutter", "Firebase", "Getx", "Dart", "Google-Auth"],
+      features: [
+    
+        "Multi-Category Shopping Experience",
+        "Real-Time Sync with Robust State & Event Management",
+        " Firebase-Powered Secure Backend",
+      ],
+      image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/cfp4amx1u8yejyzn1qmr.png",
+      images: [
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645398/TStore/sw4km136gdmdpnu74rhw.png", alt: "Anime Tracker App" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645398/TStore/htnj9wyumt8clrli1xjk.png", alt: "Notification Screen" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/afw1llzehzyxv1gc9b9f.png", alt: "Watchlist Feature" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/jtqudfdrqkpk4dz3jshp.png", alt: "Search Feature" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/kk0iworqekprdiuzlexq.png", alt: "User Profile" }
+      ],
+      githubUrl: "https://github.com/rajkumarpawar07/tStore",
+      liveUrl: "https://example.com",
+    },
+    {
+      title: "Playflex",
+      description: "A feature-rich streaming app built with Flutter, offering movies, TV shows, and web series with a smooth, interactive UI. It includes AI voice control, real-time sentiment analysis, and dynamic content powered by TMDB and Flask APIs.",
+      // longDescription: "Cosplay Companion is the ultimate social platform for cosplay enthusiasts. The app connects cosplayers with events, photographers, and fellow community members. Users can showcase their work, get inspired by others, and coordinate meetups at conventions.",
+      tags:[
+        "Flutter",
+        "Firebase",
+        "Alan AI",
+        "Naive Bayes (for ML)",
+        "Flask",
+        "TMDB API"
+      ],
+      technologies: [
+        "Flutter",
+        "GetX",
+        "Firebase Authentication",
+        "Firebase Firestore",
+        "Firebase Storage",
+        "Alan AI",
+        "Naive Bayes (for ML)",
+        "Flask",
+        "TMDB API"
+      ],
+      features: [
+        "All-in-one streaming of movies, TV shows, and web series",
+        "AI voice assistant integration using Alan for hands-free control",
+        "Sentiment analysis on IMDb reviews using Naive Bayes model",
+        "RESTful Flask APIs for seamless ML model integration",
+        "Dynamic content fetching using TMDB API for movie details"
+      ],
+      
+      image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647160/Playflex/lskqouthnpktfan4agdw.png",
+      images: [
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647160/Playflex/lskqouthnpktfan4agdw.png", alt: "Cosplay Companion App" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647161/Playflex/ixbinipvzljew1knzb4s.png", alt: "Events Screen" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647168/Playflex/kcsdlqfxpefnzqqfst79.png", alt: "Community Feed" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647169/Playflex/jq5mowc5l06zh5d1xq8r.png", alt: "Convention Map" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647170/Playflex/sinuv3yfbpsq8eoisv5z.png", alt: "Convention Map" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647168/Playflex/nhhujkv58azhhtoy46xe.png", alt: "User Profile" },
+      ],
+      githubUrl: "https://github.com/rajkumarpawar07/playflex-video-streaming-flutter-application",
+      liveUrl: "https://example.com",
+    },
+    {
+      title: "NetTeam",
+      description: "Built a business-focused social media app enabling real-time communication and advanced video editing for networking and growth.",
+      // longDescription: "Anime Tracker is a comprehensive mobile app designed for anime enthusiasts to keep track of their favorite shows. The app allows users to create watchlists, receive notifications for new episodes, track viewing progress, and discover new shows based on their preferences.",
+      tags: ["Flutter", "Node.js", "MongoDB", "WebRTC", "Socket.IO", "Banuba SDK"],
+      technologies: ["Flutter", "Node.js", "MongoDB", "WebRTC", "Socket.IO", "Banuba SDK"],
+
+      features: [
+        "Real-time chat and video calling using WebRTC and Socket.IO",
+        "In-app video editing with effects, cropping, and audio overlay using Banuba SDK",
+        "Community-driven networking space for business-focused social engagement"
+      ],
+      image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744219116/NetTeam/c4lqefepkp67mo9nblhq.png",
+      images: [
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744219116/NetTeam/c4lqefepkp67mo9nblhq.png", alt: "" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744219116/NetTeam/gxtv0ta6tavyuq9ineco.png", alt: "" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744219117/NetTeam/fj8dou210vez5vxd0lp0.png", alt: "" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744219116/NetTeam/gfgppzuic3ps0eb3qxm2.png", alt: "" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744219116/NetTeam/bc8ubaovtrc4yvc5fsao.png", alt: "" },
+        { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1744219116/NetTeam/bf6wlhcqeedp390hsliv.png", alt: "" }
+      ],
+      githubUrl: "https://github.com/rajkumarpawar07/Net-Team",
       liveUrl: "https://example.com",
     },
   
