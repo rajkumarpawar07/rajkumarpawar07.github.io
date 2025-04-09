@@ -5,10 +5,10 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="py-12 border-t border-border">
+    <footer className="py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8"> 
+          {/* <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8"> 
             <div className="mb-6 md:mb-0">
               <a href="#home" className="flex items-center gap-2 mb-4">
                 <Code className="h-6 w-6 text-accent" />
@@ -102,7 +102,7 @@ export function Footer() {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
           
           <div className="pt-8 border-t border-border text-center sm:flex sm:items-center sm:justify-between">
             <p className="text-sm text-muted-foreground">

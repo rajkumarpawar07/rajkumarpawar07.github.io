@@ -128,21 +128,22 @@ export function Contact() {
                 </div>
                 
                 <Button 
-                  type="submit" 
-                  className="anime-button w-full"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center justify-center gap-2">
-                      Sending...
-                    </span>
-                  ) : (
-                    <span className="flex items-center justify-center gap-2">
-                      Send Message
-                      <Send className="h-4 w-4" />
-                    </span>
-                  )}
-                </Button>
+  type="submit" 
+  className="anime-button w-full bg-white text-black hover:bg-black hover:text-white transition-colors"
+  disabled={isSubmitting}
+>
+  {isSubmitting ? (
+    <span className="flex items-center justify-center gap-2">
+      Sending...
+    </span>
+  ) : (
+    <span className="flex items-center justify-center gap-2">
+      Send Message
+      <Send className="h-4 w-4" />
+    </span>
+  )}
+</Button>
+
               </form>
             </div>
             

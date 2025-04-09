@@ -41,16 +41,15 @@ export function Projects() {
   const projects = [
     {
       title: "TStore",
-      description: "A mobile application to track your favorite anime series, episodes, and get notifications for new releases.",
-      longDescription: "Anime Tracker is a comprehensive mobile app designed for anime enthusiasts to keep track of their favorite shows. The app allows users to create watchlists, receive notifications for new episodes, track viewing progress, and discover new shows based on their preferences.",
-      tags: ["React Native", "Firebase", "Redux", "Jikan API"],
-      technologies: ["React Native", "Firebase", "Redux", "TypeScript", "Jikan API", "Expo"],
+      description: "TSore is a full-stack flutter e-Commerce application, ensuring seamless functionality on both Android and IOS platforms with different categories to shop.",
+      // longDescription: "Anime Tracker is a comprehensive mobile app designed for anime enthusiasts to keep track of their favorite shows. The app allows users to create watchlists, receive notifications for new episodes, track viewing progress, and discover new shows based on their preferences.",
+      tags: ["Flutter", "Firebase", "Getx", "Dart", "Google-Auth"],
+      technologies: ["Flutter", "Firebase", "Getx", "Dart", "Google-Auth"],
       features: [
-        "Real-time notifications for new episode releases",
-        "Personalized watchlist management",
-        "Detailed anime information and statistics",
-        "Offline viewing capability",
-        "Social sharing functionality"
+    
+        "Multi-Category Shopping Experience",
+        "Real-Time Sync with Robust State & Event Management",
+        " Firebase-Powered Secure Backend",
       ],
       image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/cfp4amx1u8yejyzn1qmr.png",
       images: [
@@ -60,22 +59,40 @@ export function Projects() {
         { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/jtqudfdrqkpk4dz3jshp.png", alt: "Search Feature" },
         { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742645397/TStore/kk0iworqekprdiuzlexq.png", alt: "User Profile" }
       ],
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/rajkumarpawar07/tStore",
       liveUrl: "https://example.com",
     },
     {
       title: "Playflex",
-      description: "A social app for cosplayers to share their costumes, find events, and connect with other enthusiasts in their area.",
-      longDescription: "Cosplay Companion is the ultimate social platform for cosplay enthusiasts. The app connects cosplayers with events, photographers, and fellow community members. Users can showcase their work, get inspired by others, and coordinate meetups at conventions.",
-      tags: ["React Native", "GraphQL", "AWS Amplify", "Maps API"],
-      technologies: ["React Native", "GraphQL", "AWS Amplify", "Maps API", "Cloudinary", "Auth0"],
-      features: [
-        "Cosplay portfolio creation and sharing",
-        "Convention event discovery and calendar",
-        "Community messaging and collaboration",
-        "Location-based cosplayer finder",
-        "Costume progress tracking"
+      description: "A feature-rich streaming app built with Flutter, offering movies, TV shows, and web series with a smooth, interactive UI. It includes AI voice control, real-time sentiment analysis, and dynamic content powered by TMDB and Flask APIs.",
+      // longDescription: "Cosplay Companion is the ultimate social platform for cosplay enthusiasts. The app connects cosplayers with events, photographers, and fellow community members. Users can showcase their work, get inspired by others, and coordinate meetups at conventions.",
+      tags:[
+        "Flutter",
+        "Firebase",
+        "Alan AI",
+        "Naive Bayes (for ML)",
+        "Flask",
+        "TMDB API"
       ],
+      technologies: [
+        "Flutter",
+        "GetX",
+        "Firebase Authentication",
+        "Firebase Firestore",
+        "Firebase Storage",
+        "Alan AI",
+        "Naive Bayes (for ML)",
+        "Flask",
+        "TMDB API"
+      ],
+      features: [
+        "All-in-one streaming of movies, TV shows, and web series",
+        "AI voice assistant integration using Alan for hands-free control",
+        "Sentiment analysis on IMDb reviews using Naive Bayes model",
+        "RESTful Flask APIs for seamless ML model integration",
+        "Dynamic content fetching using TMDB API for movie details"
+      ],
+      
       image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647160/Playflex/lskqouthnpktfan4agdw.png",
       images: [
         { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647160/Playflex/lskqouthnpktfan4agdw.png", alt: "Cosplay Companion App" },
@@ -85,21 +102,34 @@ export function Projects() {
         { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647170/Playflex/sinuv3yfbpsq8eoisv5z.png", alt: "Convention Map" },
         { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647168/Playflex/nhhujkv58azhhtoy46xe.png", alt: "User Profile" },
       ],
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/rajkumarpawar07/playflex-video-streaming-flutter-application",
       liveUrl: "https://example.com",
     },
     {
       title: "Bigga",
-      description: "Developed Bigga, a Flutter and Flame-based gaming app with weekly game additions, real cash rewards, and secure KYC verification.",
-      longDescription: "Cosplay Companion is the ultimate social platform for cosplay enthusiasts. The app connects cosplayers with events, photographers, and fellow community members. Users can showcase their work, get inspired by others, and coordinate meetups at conventions.",
-      tags: ["React Native", "GraphQL", "AWS Amplify", "Maps API"],
-      technologies: ["React Native", "GraphQL", "AWS Amplify", "Maps API", "Cloudinary", "Auth0"],
+      description: "Developed Bigga, a Flutter and Flame-based gaming app with weekly game releases, real cash rewards, and secure KYC verification.",
+
+      // longDescription: "Cosplay Companion is the ultimate social platform for cosplay enthusiasts. The app connects cosplayers with events, photographers, and fellow community members. Users can showcase their work, get inspired by others, and coordinate meetups at conventions.",
+      tags: [
+        "Flutter",
+        "Flame Engine",
+        "Firebase Authentication",
+        "Firebase Firestore",
+        "Razorpay",
+        "GetX"
+      ],
+      technologies: [
+        "Flutter",
+        "Flame Engine",
+        "Firebase Authentication",
+        "Firebase Firestore",
+        "Razorpay",
+        "GetX"
+      ],
       features: [
-        "Developed a dynamic gaming platform using Flutter and Flame, offering users access to multiple games with a new game added every week.",
-        "Convention event discovery and calendar",
-        "Community messaging and collaboration",
-        "Location-based cosplayer finder",
-        "Costume progress tracking"
+        "Weekly addition of new mini-games to keep the experience fresh and engaging",
+        "Real cash rewards system with leaderboard-based competition",
+        "Secure KYC verification for trusted and transparent transactions"
       ],
       image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647460/Bigga/feesi0wah8k3to240vll.png",
       images: [
@@ -111,21 +141,33 @@ export function Projects() {
         { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647436/Bigga/s0bfv22u1jd3a5qxgbqz.png", alt: "User Profile" },
         { src: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742647436/Bigga/uom2qpv1rlvammiullvg.png", alt: "User Profile" },
       ],
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/rajkumarpawar07/Bigga",
       liveUrl: "https://example.com",
     },
     {
-      title: "Manga Reader",
-      description: "A cross-platform mobile app for reading and downloading manga with a beautiful UI and offline reading capability.",
-      longDescription: "Manga Reader provides a seamless experience for manga enthusiasts to discover, read, and collect their favorite manga. The app features a minimalist design focused on readability, with powerful organization tools and a vast library of content.",
-      tags: ["Flutter", "Dart", "SQLite", "REST API"],
-      technologies: ["Flutter", "Dart", "SQLite", "REST API", "Provider", "Firebase Auth"],
+      title: "Tack Tik",
+      description: "A guard management and monitoring app enabling real-time location tracking, shift scheduling, and emergency handling features.",
+      // longDescription: "Manga Reader provides a seamless experience for manga enthusiasts to discover, read, and collect their favorite manga. The app features a minimalist design focused on readability, with powerful organization tools and a vast library of content.",
+      tags: [
+        "Flutter",
+        "Firebase Cloud Messaging",
+        "Firebase Cloud Functions",
+        "Firebase Firestore",
+        "Background Location Services",
+        "Google Maps API"
+      ],
+      technologies: [
+        "Flutter",
+        "Firebase Cloud Messaging",
+        "Firebase Cloud Functions",
+        "Firebase Firestore",
+        "Background Location Services",
+        "Google Maps API"
+      ],
       features: [
-        "Offline reading mode",
-        "Customizable reading experience",
-        "Chapter tracking and bookmarking",
-        "Advanced search and filtering",
-        "Reading history and statistics"
+        "Real-time guard tracking with route visualization and background location services",
+        "Advanced shift calendar with scheduling and daily activity reporting (DAR)",
+        "Site tour assistance and panic mode for emergency response"
       ],
       image: "https://res.cloudinary.com/dfyrklyve/image/upload/v1742646691/Tack%20Tik/ogdkdrxcp5uhnw6ct7hy.png",
       images: [
@@ -140,7 +182,7 @@ export function Projects() {
 
 
       ],
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/rajkumarpawar07/Tack-tik",
       liveUrl: "https://example.com",
     },
   
@@ -224,7 +266,7 @@ export function Projects() {
                     >
                       <Github className="h-5 w-5" />
                     </a>
-                    <a 
+                    {/* <a 
                       href={project.liveUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
@@ -233,7 +275,7 @@ export function Projects() {
                       onClick={(e) => e.stopPropagation()}
                     >
                       <ExternalLink className="h-5 w-5" />
-                    </a>
+                    </a> */}
                   </div>
                   
                   <button 
@@ -252,13 +294,21 @@ export function Projects() {
           </div>
           
           <div className="mt-16 text-center">
-            <Button className="anime-button font-anime" asChild>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                View More Projects
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-          </div>
+  <Button
+    className="anime-button font-anime bg-white text-black hover:bg-black hover:text-white transition-colors"
+    asChild
+  >
+    <a
+      href="https://github.com/rajkumarpawar07?tab=repositories"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View More Projects
+      <ArrowRight className="ml-2 h-4 w-4" />
+    </a>
+  </Button>
+</div>
+
         </div>
       </div>
       

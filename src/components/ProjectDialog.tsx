@@ -131,7 +131,7 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
               
               <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-between items-center">
                 <div className="flex items-center gap-4">
-                  <Button 
+                  {/* <Button 
                     variant="outline" 
                     size="sm" 
                     className="flex items-center gap-2 border-border/40 hover:bg-accent/5 hover:text-accent transition-colors"
@@ -141,16 +141,16 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
                       <Github className="h-4 w-4" />
                       <span>Code</span>
                     </a>
-                  </Button>
+                  </Button> */}
                   
                   <Button 
                     className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-medium transition-all shadow-md hover:shadow-lg"
                     size="sm"
                     asChild
                   >
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <span>Live Demo</span>
-                      <ExternalLink className="ml-2 h-4 w-4" />
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <span>Code</span>
+                      <Github className="h-4 w-4" />
                     </a>
                   </Button>
                 </div>

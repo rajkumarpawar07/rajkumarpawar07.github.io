@@ -30,23 +30,23 @@ export function Certifications() {
   }, []);
 
   const certificates = [
-    {
-      title: "AWS Certified Developer - Associate",
-      issuer: "Amazon Web Services",
-      date: "May 2023",
-      description: "Validated expertise in developing, deploying, and debugging cloud-based applications using AWS.",
-      skills: ["AWS Lambda", "Amazon S3", "DynamoDB", "API Gateway", "CloudFormation"],
-      image: "https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png",
-      credentialUrl: "https://aws.amazon.com/certification/certified-developer-associate/"
-    },
+    // {
+    //   title: "AWS Certified Developer - Associate",
+    //   issuer: "Amazon Web Services",
+    //   date: "May 2023",
+    //   description: "Validated expertise in developing, deploying, and debugging cloud-based applications using AWS.",
+    //   skills: ["AWS Lambda", "Amazon S3", "DynamoDB", "API Gateway", "CloudFormation"],
+    //   image: "https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png",
+    //   credentialUrl: "https://aws.amazon.com/certification/certified-developer-associate/"
+    // },
     {
       title: "Associate Cloud Engineer",
       issuer: "Google Cloud",
-      date: "February 2023",
+      date: "February 2025",
       description: "Demonstrated ability to deploy applications, monitor operations, and manage enterprise solutions on Google Cloud Platform.",
-      skills: ["Kubernetes", "Cloud Functions", "Google Compute Engine", "Cloud Storage", "Cloud SQL"],
+      skills: ["Kubernetes (GKE)", "Cloud Architecture", "Google Compute Engine", "Cloud Storage","IAM","Networking", "Cloud SQL"],
       image: "https://images.credly.com/size/680x680/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/image.png",
-      credentialUrl: "https://cloud.google.com/certification/cloud-engineer"
+      credentialUrl: "https://www.credly.com/badges/ffaa6376-9b1d-4b4a-8f7b-a162d27ad403/public_url"
     }
   ];
 

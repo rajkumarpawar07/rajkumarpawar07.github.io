@@ -44,9 +44,7 @@ export function WorkExperience() {
       duration: "September 2024 - Present",
       description: "Developing scalable microservices architecture using Node.js, TypeScript, and React. Mentoring junior developers and implementing CI/CD pipelines.",
       achievements: [
-        "Developed a scalable microservices architecture using Node.js, TypeScript, and React. Mentored junior developers and implemented CI/CD pipelines.",
-        "Led the development of a new feature that increased user engagement by 20%.",
-        "Implemented a new logging system that reduced the time it takes to diagnose and fix issues by 50%."
+        "Working on Google Cloud with DevOps practices."
       ],
       technologies: ["Google Cloud", "Kubernetes", "Terraform", "Docker", "AWS", "SNS"]
     },
