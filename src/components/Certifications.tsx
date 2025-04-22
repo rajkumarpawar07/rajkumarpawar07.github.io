@@ -30,21 +30,47 @@ export function Certifications() {
   }, []);
 
   const certificates = [
-    // {
-    //   title: "AWS Certified Developer - Associate",
-    //   issuer: "Amazon Web Services",
-    //   date: "May 2023",
-    //   description: "Validated expertise in developing, deploying, and debugging cloud-based applications using AWS.",
-    //   skills: ["AWS Lambda", "Amazon S3", "DynamoDB", "API Gateway", "CloudFormation"],
-    //   image: "https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png",
-    //   credentialUrl: "https://aws.amazon.com/certification/certified-developer-associate/"
-    // },
+    {
+      title: "Professional Cloud DevOps Engineer",
+      issuer: "Google Cloud",
+      date: "April 2025 - April 2027",
+      description: "Professional Cloud DevOps Engineers implement processes throughout the systems development lifecycle using Google-recommended methodologies and tools.",
+      skills: [
+        "CI/CD",
+        "Cloud Computing",
+        "Cloud Security",
+        "DevOps",
+        "Google Cloud Platform (GCP)",
+        "Infrastructure as Code (IaC)",
+        "Infrastructure Automation",
+        "Kubernetes",
+        "Scalability",
+        "Site Reliability Engineering (SRE)",
+        "System Monitoring"
+      ],
+      
+      image: "https://images.credly.com/size/680x680/images/33f08b7e-fa6a-41cd-810a-21cc1c336f6d/image.png",
+      credentialUrl: "https://www.credly.com/earner/earned/badge/47746152-7cfc-4ed2-92ca-7066198d1279"
+    },
     {
       title: "Associate Cloud Engineer",
       issuer: "Google Cloud",
-      date: "February 2025",
+      date: "February 2025 - February 2028",
       description: "Demonstrated ability to deploy applications, monitor operations, and manage enterprise solutions on Google Cloud Platform.",
-      skills: ["Kubernetes (GKE)", "Cloud Architecture", "Google Compute Engine", "Cloud Storage","IAM","Networking", "Cloud SQL"],
+      skills: [
+        "Cloud Architecture",
+        "Cloud Computing",
+        "Cloud Security",
+        "Cloud Storage",
+        "Compute Engine",
+        "GKE (Kubernetes Engine)",
+        "Google Cloud Platform (GCP)",
+        "Identity and Access Management (IAM)",
+        "Infrastructure as Code (IaC)",
+        "Networking",
+        "Pub/Sub",
+        "Cloud SQL"
+      ],
       image: "https://images.credly.com/size/680x680/images/08096465-cbfc-4c3e-93e5-93c5aa61f23e/image.png",
       credentialUrl: "https://www.credly.com/badges/ffaa6376-9b1d-4b4a-8f7b-a162d27ad403/public_url"
     }
