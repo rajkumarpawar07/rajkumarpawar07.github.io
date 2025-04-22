@@ -28,6 +28,10 @@ export function TechnologiesSection() {
     {name: "Grafana", logo: "https://cdn.worldvectorlogo.com/logos/grafana.svg"},
     {name: "Kubernetes", logo: "https://cdn.worldvectorlogo.com/logos/kubernets.svg"},
     {name: "Terraform", logo: "https://www.svgrepo.com/show/374122/terraform.svg"},
+    {name: "ArgoCD", logo: "https://icon.icepanel.io/Technology/svg/Argo-CD.svg"},
+    {name: "Prometheus", logo: "https://www.svgrepo.com/show/354219/prometheus.svg"},
+    {name: "Opentelemetry", logo: "https://opentelemetry.io/img/logos/opentelemetry-horizontal-color.svg"},
+    {name: "Helm", logo: "https://www.svgrepo.com/show/448231/helm.svg"},
    
    
    
