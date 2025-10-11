@@ -27,19 +27,19 @@ export function Hero() {
               </div>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-anime leading-tight">
-              Hi, I'm <span className="text-gradient-anime">Rajkumar Pawar</span>,
+              Hi, I'm <span className="text-gradient-anime">Rajkumar Pawar.</span>
             </h1>
           </div>
-          
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 font-anime leading-tight">
-            Full-Stack Developer with Cloud Engineering & DevOps Expertise.
+
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 font-anime leading-tight text-gray-200">
+            Full-Stack Engineer with Cloud & DevOps Expertise.
           </h2>
           
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl font-body">
+          {/* <p className="text-xl text-muted-foreground mb-8 max-w-3xl font-body">
             A software engineer with a passion for building efficient, scalable, and 
             elegant solutions to complex problems. I tell stories through code and create 
             digital experiences that people love.
-          </p>
+          </p> */}
           
           <div className="flex items-center gap-6 mb-16">
             <a 

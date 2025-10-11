@@ -243,122 +243,149 @@ export function Projects() {
       className="py-24 opacity-0 transition-opacity duration-1000"
     >
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="inline-block mb-4 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium font-anime">
-            My Work
-          </div>
-          
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 font-anime">
-               Projects Showcase
-              </h2>
-              {/* <p className="text-muted-foreground max-w-2xl font-body">
-                Here are some of my recent mobile application projects. Each one presented unique challenges
-                and opportunities to learn and grow as a developer.
-              </p> */}
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium border border-accent/20">
+              💼 My Work
             </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
+              Featured Projects
+            </h2>
+            
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              Innovative solutions built with cutting-edge technologies
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <div 
                 key={index} 
-                className="group anime-card flex flex-col h-full gap-3 p-4 rounded-lg bg-card/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-accent/5 cursor-pointer"
+                className="group relative flex flex-col overflow-hidden rounded-xl border border-accent/10 bg-card/50 backdrop-blur-sm transition-all duration-500 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-2 cursor-pointer"
                 onClick={() => setSelectedProject(index)}
+                style={{
+                  animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+                }}
               >
-                <div className="relative mb-5 overflow-hidden rounded-md aspect-[4/3]">
-                  <Carousel className="w-full" autoplay={true}>
-                    <CarouselContent>
-                      {project.images.map((image, imgIndex) => (
-                        <CarouselItem key={imgIndex}>
-                          <div className="overflow-hidden rounded-md">
+                {/* Image Section */}
+                <div className="relative h-56 overflow-hidden bg-gradient-to-br from-accent/5 to-transparent">
+                  <Carousel className="w-full h-full">
+                    <CarouselContent className="h-full">
+                      {project.images.slice(0, 3).map((image, imgIndex) => (
+                        <CarouselItem key={imgIndex} className="h-full">
+                          <div className="relative h-full overflow-hidden">
                             <img 
                               src={image.src} 
                               alt={image.alt} 
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           </div>
                         </CarouselItem>
                       ))}
                     </CarouselContent>
                   </Carousel>
+                  
+                  {/* Project Number Badge */}
+                  {/* <div className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm border border-accent/20 text-accent font-bold text-sm">
+                    {String(index + 1).padStart(2, '0')}
+                  </div> */}
                 </div>
                 
-                <h3 className="text-xl font-semibold mb-2 font-anime">{project.title}</h3>
-                
-                <p className="text-muted-foreground mb-4 flex-grow font-body">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {project.tags.map((tag, idx) => (
-                    <span 
-                      key={idx} 
-                      className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground font-body"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex items-center justify-between mt-auto">
-                  <div className="flex items-center gap-3">
+                {/* Content Section */}
+                <div className="flex flex-col flex-grow p-6">
+                  {/* Title */}
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3 leading-relaxed flex-grow">
+                    {project.description}
+                  </p>
+                  
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.slice(0, 3).map((tag, idx) => (
+                      <span 
+                        key={idx} 
+                        className="px-2.5 py-1 text-xs font-medium rounded-md bg-accent/10 text-accent border border-accent/20"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                    {project.tags.length > 3 && (
+                      <span className="px-2.5 py-1 text-xs font-medium rounded-md bg-secondary text-secondary-foreground">
+                        +{project.tags.length - 3}
+                      </span>
+                    )}
+                  </div>
+                  
+                  {/* Footer */}
+                  <div className="flex items-center justify-between pt-4 border-t border-accent/10">
                     <a 
                       href={project.githubUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground transition-colors"
+                      className="flex items-center justify-center w-10 h-10 rounded-lg bg-accent/10 text-accent hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110"
                       aria-label="GitHub repository"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <Github className="h-5 w-5" />
                     </a>
-                    {/* <a 
-                      href={project.liveUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                      aria-label="Live site"
-                      onClick={(e) => e.stopPropagation()}
+                    
+                    <button 
+                      className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-accent hover:text-white bg-accent/10 hover:bg-accent rounded-lg transition-all duration-300 hover:scale-105"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedProject(index);
+                      }}
                     >
-                      <ExternalLink className="h-5 w-5" />
-                    </a> */}
+                      View Details
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
                   </div>
-                  
-                  <button 
-                    className="text-sm font-medium text-accent hover:text-accent/80 inline-flex items-center gap-1 transition-colors font-body"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedProject(index);
-                    }}
-                  >
-                    View Project
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </button>
                 </div>
               </div>
             ))}
           </div>
           
+          {/* View More Button */}
           <div className="mt-16 text-center">
-  <Button
-    className="anime-button font-anime bg-white text-black hover:bg-black hover:text-white transition-colors"
-    asChild
-  >
-    <a
-      href="https://github.com/rajkumarpawar07?tab=repositories"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      View More Projects
-      <ArrowRight className="ml-2 h-4 w-4" />
-    </a>
-  </Button>
-</div>
-
+            <Button
+              className="group relative overflow-hidden bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent text-white px-8 py-6 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl hover:shadow-accent/20 transition-all duration-300 hover:scale-105"
+              asChild
+            >
+              <a
+                href="https://github.com/rajkumarpawar07?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Github className="h-5 w-5" />
+                <span>Explore More Projects</span>
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
+      
+      {/* Animation Styles */}
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
       
       {selectedProject !== null && (
         <ProjectDialog 
