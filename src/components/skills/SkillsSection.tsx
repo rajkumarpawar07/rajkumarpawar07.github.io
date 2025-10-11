@@ -56,36 +56,47 @@ export function SkillsSection() {
         </div>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skills.map((skill, index) => (
           <Card 
             key={index}
-            className="group relative overflow-hidden border-accent/10 bg-card/50 backdrop-blur-sm transition-all duration-500 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1"
+            className="group relative overflow-hidden border border-accent/10 bg-transparent backdrop-blur-sm transition-all duration-700 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/20 hover:scale-[1.02]"
             style={{
               animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
             }}
           >
-            {/* Gradient Background */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+            {/* Animated Border Glow */}
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700" />
             
-            <CardContent className="relative p-5">
-              <div className="flex flex-col gap-3">
-                {/* Icon */}
-                <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-accent/10 text-accent group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
-                  {skill.icon}
+            {/* Colored Accent Line */}
+            <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${skill.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
+            
+            <CardContent className="relative p-6">
+              <div className="flex items-center gap-4">
+                {/* Icon Container */}
+                <div className="relative flex-shrink-0">
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${skill.color} opacity-20 blur-md group-hover:opacity-40 transition-opacity duration-500`} />
+                  <div className={`relative flex items-center justify-center h-14 w-14 rounded-2xl bg-gradient-to-br ${skill.color} text-white shadow-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-500`}>
+                    {skill.icon}
+                  </div>
                 </div>
                 
                 {/* Content */}
-                <div>
-                  <h4 className="font-semibold mb-1 group-hover:text-accent transition-colors">
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-bold text-lg tracking-tight group-hover:text-accent transition-colors duration-300 mb-1">
                     {skill.name}
                   </h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground/80 leading-relaxed group-hover:text-muted-foreground transition-colors duration-300">
                     {skill.description}
                   </p>
                 </div>
               </div>
             </CardContent>
+            
+            {/* Corner Decoration */}
+            <div className="absolute bottom-0 right-0 w-24 h-24 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+              <div className={`absolute inset-0 bg-gradient-to-tl ${skill.color} rounded-tl-full`} />
+            </div>
           </Card>
         ))}
       </div>

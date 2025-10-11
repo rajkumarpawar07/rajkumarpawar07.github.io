@@ -12,10 +12,10 @@ interface Star {
 
 // List of possible star images
 const STAR_IMAGES = [
-  '/lovable-uploads/CS_Star_10.png',
-  '/lovable-uploads/CS_Star_7.png',
-  '/lovable-uploads/CS_Star_5.png',
-  '/lovable-uploads/CS_Star_8.png',
+  // '/lovable-uploads/CS_Star_10.png',
+  // '/lovable-uploads/CS_Star_7.png',
+  // '/lovable-uploads/CS_Star_5.png',
+  // '/lovable-uploads/CS_Star_8.png',
   '/lovable-uploads/CS_Star_2.png',
 ];
 

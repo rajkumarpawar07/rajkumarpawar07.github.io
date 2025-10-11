@@ -72,22 +72,44 @@ export function AboutBio() {
       </Card>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-3 gap-4">
+<div className="grid grid-cols-3 gap-4">
         {stats.map((stat, index) => (
           <Card 
             key={index}
-            className="group border-accent/10 bg-card/30 backdrop-blur-sm hover:border-accent/30 hover:bg-accent/5 transition-all duration-300 hover:-translate-y-1"
+            className="group relative overflow-hidden border border-accent/10 bg-transparent backdrop-blur-sm transition-all duration-700 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/20 hover:scale-[1.05]"
             style={{
               animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
             }}
           >
-            <CardContent className="p-4 text-center">
-              <div className="flex items-center justify-center w-10 h-10 mx-auto mb-2 rounded-lg bg-accent/10 text-accent group-hover:bg-accent/20 transition-colors">
-                {stat.icon}
+            {/* Animated Border Glow */}
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700" />
+            
+            {/* Top Accent Line */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent/50 via-accent to-accent/50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+            
+            <CardContent className="relative p-6 text-center">
+              {/* Icon Container */}
+              <div className="relative inline-block mb-3">
+                <div className="flex items-center justify-center w-10 h-10 mx-auto mb-2 rounded-lg bg-accent/10 text-accent group-hover:bg-accent/20 transition-colors">
+                  {stat.icon}
+                </div>
               </div>
-              <div className="text-2xl font-bold mb-1 text-accent">{stat.value}</div>
-              <div className="text-xs text-muted-foreground">{stat.label}</div>
+              
+              {/* Value with counter effect styling */}
+              <div className="text-3xl font-bold mb-1 bg-gradient-to-r from-accent via-accent/90 to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">
+                {stat.value}
+              </div>
+              
+              {/* Label */}
+              <div className="text-xs font-medium text-muted-foreground/80 group-hover:text-muted-foreground transition-colors duration-300 tracking-wide uppercase">
+                {stat.label}
+              </div>
             </CardContent>
+            
+            {/* Background Decoration */}
+            <div className="absolute -bottom-8 -right-8 w-32 h-32 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+              <div className="absolute inset-0 bg-gradient-to-tl from-accent to-accent/50 rounded-full blur-2xl" />
+            </div>
           </Card>
         ))}
       </div>

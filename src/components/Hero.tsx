@@ -31,7 +31,7 @@ export function Hero() {
             </h1>
           </div>
 
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 font-anime leading-tight text-gray-200">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 font-anime leading-tight text-gray-300">
             Full-Stack Engineer with Cloud & DevOps Expertise.
           </h2>
           
