@@ -22,37 +22,37 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Work", href: "#work-experience" },
     { name: "Projects", href: "#projects" },
+    { name: "Work", href: "#work-experience" },
     { name: "Certifications", href: "#certifications" },
+    { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" }
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out flex justify-center py-3 ${
-        isScrolled ? "py-2" : "py-3"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out flex justify-center ${
+        isScrolled ? "py-2" : "py-4"
       }`}
     >
-      <div className={`max-w-3xl mx-auto ${
+      <div className={`max-w-4xl w-full mx-4 ${
         isScrolled 
-          ? "bg-gradient-to-r from-purple-900/50 via-pink-900/50 to-cyan-800/50 backdrop-blur-md"
-          : "bg-gradient-to-r from-purple-800/20 via-pink-800/20 to-cyan-700/20 backdrop-blur-md"
-      } rounded-full px-6 transition-all duration-300`}>
-        <div className="flex items-center justify-between h-12">
-          <a href="#home" className="flex items-center gap-2 mr-8">
-            <span className="font-anime text-xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
+          ? "bg-background/80 backdrop-blur-xl border border-border/40"
+          : "bg-background/60 backdrop-blur-lg border border-border/20"
+      } rounded-2xl px-6 transition-all duration-300 shadow-sm`}>
+        <div className="flex items-center justify-between h-14">
+          <a href="#home" className="flex items-center gap-2">
+            <span className="font-anime text-lg font-semibold text-foreground">
               Rajkumar
             </span>
           </a>
           
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium transition-colors hover:text-accent font-anime"
+                className="text-sm font-medium transition-colors hover:text-primary relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
               >
                 {link.name}
               </a>
@@ -63,15 +63,15 @@ export function Navbar() {
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="hover:bg-transparent transition-all duration-300 hover:scale-110 hover:rotate-12 group"
+                  className="h-9 w-9 hover:bg-accent/10"
                 >
-                  <Sun className="h-5 w-5 group-hover:text-accent transition-colors" />
+                  <Sun className="h-4 w-4" />
                   <span className="sr-only">Adjust brightness</span>
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="group flex flex-col h-full gap-3 p-4 rounded-lg bg-card/10 backdrop-blur-sm hover:bg-accent/5 cursor-pointer border-0">
-                <div className="">
-                  <h4 className="text-sm font-medium mb-2">Adjust Brightness</h4>
+              <PopoverContent className="w-64">
+                <div className="space-y-2">
+                  <h4 className="text-sm font-medium">Adjust Brightness</h4>
                   <BrightnessControl />
                 </div>
               </PopoverContent>
@@ -80,7 +80,7 @@ export function Navbar() {
           
           <Sheet>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="h-9 w-9">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
@@ -89,28 +89,22 @@ export function Navbar() {
               <div className="flex flex-col h-full py-4">
                 <div className="mb-8">
                   <a href="#home" className="flex items-center gap-2">
-                    <span className="font-anime text-xl font-bold italic bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text">
+                    <span className="font-anime text-xl font-semibold text-foreground">
                       Rajkumar
                     </span>
                   </a>
                 </div>
                 
-                <nav className="flex flex-col gap-2">
+                <nav className="flex flex-col gap-1">
                   {navLinks.map((link) => (
                     <a
                       key={link.name}
                       href={link.href}
-                      className="text-lg font-medium py-2 transition-colors hover:text-accent font-anime"
+                      className="text-base font-medium py-2 px-3 rounded-lg transition-colors hover:bg-accent/10"
                     >
                       {link.name}
                     </a>
                   ))}
-                  <a href="#" className="text-lg font-medium py-2 transition-colors hover:text-accent font-anime">
-                    Resume
-                  </a>
-                  <a href="#" className="text-lg font-medium py-2 transition-colors hover:text-accent font-anime">
-                    Blog
-                  </a>
                 </nav>
                 
                 <div className="mt-6 px-2">
