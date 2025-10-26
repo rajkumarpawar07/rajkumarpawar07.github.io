@@ -354,22 +354,22 @@ export function Projects() {
           
           {/* View More Button */}
           <div className="mt-16 text-center">
-            <Button
-              className="group relative overflow-hidden bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent text-white px-8 py-6 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl hover:shadow-accent/20 transition-all duration-300 hover:scale-105"
-              asChild
-            >
-              <a
-                href="https://github.com/rajkumarpawar07?tab=repositories"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <Github className="h-5 w-5" />
-                <span>Explore More Projects</span>
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </a>
-            </Button>
-          </div>
+                <Button
+                  className="group relative overflow-hidden bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent text-white px-8 py-6 text-base font-semibold rounded-xl shadow-lg hover:shadow-xl hover:shadow-accent/20 transition-all duration-300 hover:scale-105"
+                  asChild
+                >
+                  <a
+                  href="https://github.com/rajkumarpawar07?tab=repositories"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                  >
+                  <Github className="h-5 w-5" />
+                  <span>Explore <span className="text-yellow-300 font-bold">50+</span> More Projects</span>
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </Button>
+                </div>
         </div>
       </div>
       
