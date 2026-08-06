@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import './Navbar.css';
 
-const REPO_URL = 'https://github.com/rajkumarpawar07';
+const REPO_URL = 'https://github.com/rajkumarpawar07/rajkumarpawar07.github.io';
 
 export const Navbar: React.FC = () => {
   return (

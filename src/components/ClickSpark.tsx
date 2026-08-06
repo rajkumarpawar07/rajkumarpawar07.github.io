@@ -177,18 +177,24 @@ export const ClickSpark: React.FC<ClickSparkProps> = ({
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    const handleClick = (event: MouseEvent) => {
-      if (event.button !== 0) return;
+    const handleClick = (event: MouseEvent | PointerEvent) => {
+      if (event.button !== undefined && event.button !== 0) return;
 
-      playClickSound();
+      try {
+        playClickSound();
+      } catch {
+        // Ignore AudioContext autoplay restrictions on browser security policy
+      }
 
       const cx = event.clientX;
       const cy = event.clientY;
 
       // Central burst ring
       particles.push({
-        x: cx, y: cy,
-        vx: 0, vy: 0,
+        x: cx,
+        y: cy,
+        vx: 0,
+        vy: 0,
         radius: 2,
         age: 0,
         life: duration * 0.45,
@@ -239,11 +245,11 @@ export const ClickSpark: React.FC<ClickSparkProps> = ({
 
     handleResize();
     window.addEventListener('resize', handleResize);
-    window.addEventListener('click', handleClick);
+    window.addEventListener('pointerdown', handleClick, { capture: true });
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      window.removeEventListener('click', handleClick);
+      window.removeEventListener('pointerdown', handleClick, { capture: true });
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, [duration, sparkCount]);
