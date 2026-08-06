@@ -1,4 +1,4 @@
-export type MockupKind = 'search' | 'logo' | 'gradient' | 'blog' | 'game' | 'AI' | 'ML' | 'player' | 'chat';
+export type MockupKind = 'search' | 'logo' | 'gradient' | 'blog' | 'game' | 'AI' | 'ML' | 'player' | 'chat' | 'map' | 'shop';
 
 export interface ProjectData {
   name: string;
