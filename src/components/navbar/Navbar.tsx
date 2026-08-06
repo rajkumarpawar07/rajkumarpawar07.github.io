@@ -20,7 +20,6 @@ export const Navbar: React.FC = () => {
             Resume
           </NavLink>
         </div>
-
         <a
           href={REPO_URL}
           target="_blank"
