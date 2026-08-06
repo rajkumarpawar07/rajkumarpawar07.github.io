@@ -1,0 +1,49 @@
+.uses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.uses-card {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.uses-category-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 1px dashed var(--border-dashed);
+  padding-bottom: 10px;
+}
+
+.uses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.uses-item {
+  display: flex;
+  gap: 8px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  flex-wrap: wrap;
+}
+
+.uses-label {
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.uses-sep {
+  color: var(--text-muted);
+}
+
+.uses-name {
+  color: var(--text-secondary);
+}

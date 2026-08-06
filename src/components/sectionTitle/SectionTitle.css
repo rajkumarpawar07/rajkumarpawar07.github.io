@@ -1,0 +1,83 @@
+/* ── Section Title: HUD/Reticle chip ─────────────────────────── */
+.section-title-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Outer wrapper — positions the 4 corner brackets */
+.section-title-reticle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  /* extra space so corner brackets sit just outside the chip */
+  padding: 5px;
+}
+
+/* Dark rounded-rectangle chip */
+.section-title-text {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 11px;
+  background: #111315;
+  border-radius: 5px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  /* no border — corner brackets replace it */
+  border: none;
+  white-space: nowrap;
+}
+
+/* ── L-shaped corner brackets ────────────────────────────────── */
+/*
+   Each bracket is a 10×10 box positioned at a corner of .section-title-reticle.
+   We use two borders (one on each relevant side) to make the "L".
+*/
+.reticle-corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-color: rgba(180, 185, 190, 0.70);
+  border-style: solid;
+  border-width: 0;
+}
+
+/* top-left  ┌ */
+.reticle-corner.tl {
+  top: 0;
+  left: 0;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+  border-top-left-radius: 2px;
+}
+
+/* top-right ┐ */
+.reticle-corner.tr {
+  top: 0;
+  right: 0;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+  border-top-right-radius: 2px;
+}
+
+/* bottom-left  └ */
+.reticle-corner.bl {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+  border-bottom-left-radius: 2px;
+}
+
+/* bottom-right ┘ */
+.reticle-corner.br {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+  border-bottom-right-radius: 2px;
+}

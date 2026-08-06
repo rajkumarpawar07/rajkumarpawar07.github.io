@@ -1,0 +1,32 @@
+.loading-overlay {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 26px;
+}
+
+.loading-dots {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--border-dashed-hover);
+  border-top-color: var(--text-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.loading-text {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,126 @@
+:root {
+  --bg: #0b0d0e;
+  --bg-elevated: #121415;
+  --border-dashed: rgba(255, 255, 255, 0.70);
+  --border-dashed-hover: rgba(140, 140, 140, 0.65);
+
+  --text-primary: #fafafa;
+  --text-secondary: #b3b3b3;
+  --text-muted: #86898b;
+
+  --green: #22c55e;
+  --red: #ef4444;
+  --indigo: #4f46e5;
+  --indigo-hover: #6366f1;
+  --pink: #f472b6;
+  --amber: #f59e0b;
+  --orange: #fb923c;
+
+  --container-max-width: 700px;
+  --container-padding: 18px;
+
+  --radius-sm: 3px;
+  --radius-md: 0;
+
+  --font-sans: 'Figtree', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Main Container Layout */
+.app-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 52px var(--container-padding) 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.section-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Shared dashed box */
+.dashed-box {
+  border: 1px dashed var(--border-dashed);
+  background: transparent;
+  border-radius: var(--radius-md);
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.dashed-box:hover {
+  border-color: var(--border-dashed-hover);
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* Shared outlined button */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border: 1px solid #313436;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.btn-outline:hover {
+  border-color: #e4e4e7;
+  color: var(--text-primary);
+}
+
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 5px 10px;
+  border: 1px solid #5d5bf4;
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  background: #5d5bf4;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-solid:hover {
+  background: var(--indigo-hover);
+  border-color: var(--indigo-hover);
+}
+
+/* Responsive Rules */
+@media (max-width: 700px) {
+  .app-container {
+    padding: 36px 25px 56px;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --container-padding: 14px;
+  }
+}
