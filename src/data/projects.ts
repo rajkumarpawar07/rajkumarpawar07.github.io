@@ -14,13 +14,22 @@ export interface ProjectData {
 }
 
 export const featuredProjects: ProjectData[] = [
-
+  {
+    name: 'ModelPulse',
+    desc: 'AI API Change Intelligence platform watching 15 vendor changelogs daily with self-healing scrapers.',
+    tech: ['TypeScript', 'Next.js', 'Bright Data', 'SQLite', 'Webhooks'],
+    github: 'https://github.com/rajkumarpawar07/modelpulse',
+    live: 'https://modelpulse-ruby.vercel.app',
+    badge: 'AI Intelligence ✨',
+    mockup: 'AI',
+    image: '/images/projects/modelpulse.png',
+  },
   {
     name: 'Playflex',
     desc: 'Feature-rich app offering information of movies and shows with AI voice control, real-time sentiment analysis.',
     tech: ['Alan AI', 'NLP', 'Machine Learning', 'Sentiment Analysis', 'Flutter', 'Fask', ],
     github: 'https://github.com/rajkumarpawar07/playflex-video-streaming-flutter-application',
-    badge: 'Machine Learning',
+    badge: 'Machine Learning 🧠',
     mockup: 'ML',
     image: '/images/projects/playflex.png',
   },
@@ -29,7 +38,7 @@ export const featuredProjects: ProjectData[] = [
     desc: 'AI Engineer - Building RAG architectures to make AI agents more reliable, accurate, and trustworthy.',
     tech: ['Python', 'Architecural patterns', 'Vector DBs (PostgreSQL, Pinecone)'],
     github: 'https://github.com/rajkumarpawar07/rag-architectures',
-    badge: 'AI Engineering 🤖',
+    badge: 'AI Engineering ⚙️',
     mockup: 'AI',
     image: '/images/projects/rag-architectures.jpg',
   },
@@ -38,7 +47,7 @@ export const featuredProjects: ProjectData[] = [
     desc: 'A Flutter and Flame-based gaming app with weekly game releases, real cash rewards, and secure KYC verification.',
     tech: ['Flutter', 'Flame Engine', 'Firebase', 'Razorpay'],
     github: 'https://github.com/rajkumarpawar07/Bigga',
-    badge: 'Weekly mini-games 🎮',
+    badge: 'Weekly mini-games 🎯',
     mockup: 'game',
     image: '/images/projects/bigga.png',
   },
@@ -47,7 +56,7 @@ export const featuredProjects: ProjectData[] = [
     desc: 'High-performance multimodal semantic search engine for discovering any file using natural language.',
     tech: ['Go', 'Fiber', 'Next.js', 'React', 'Gemini', 'Embeddings'],
     github: 'https://github.com/rajkumarpawar07/searchmagnet',
-    badge: 'Multimodal AI',
+    badge: 'Multimodal AI 🔍',
     mockup: 'AI',
     image: '/images/projects/searchmagnet.png',
   },

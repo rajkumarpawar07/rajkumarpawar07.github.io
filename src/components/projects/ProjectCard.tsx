@@ -134,8 +134,8 @@ export const ProjectCard: React.FC<ProjectData> = ({
 
           <div className="project-actions">
             {live && (
-              <a href={live} target="_blank" rel="noopener noreferrer" className="btn-outline project-btn">
-                <FaExternalLinkAlt /> Live
+              <a href={live} target="_blank" rel="noopener noreferrer" className="project-btn project-btn-live">
+                <FaExternalLinkAlt className="live-btn-icon" /> Live
               </a>
             )}
             <a href={github} target="_blank" rel="noopener noreferrer" className="btn-outline project-btn">

@@ -407,12 +407,126 @@
 
 .project-actions {
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 
 .project-btn {
   padding: 4px 9px;
   font-size: 0.7rem;
+}
+
+/* Modern 3D Animated Live Button */
+.project-btn-live {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 4px 11px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #f4f4f5;
+  background: #141719;
+  border: 1px solid #30353a;
+  border-bottom: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  overflow: visible;
+  user-select: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.project-btn-live .live-btn-icon {
+  font-size: 0.65rem;
+  color: #34d399;
+  transition: transform 0.2s ease;
+}
+
+/* 3D Animated Bottom Shelf */
+.project-btn-live::after {
+  content: '';
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  bottom: -3.5px;
+  height: 3.5px;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    #059669 0%,
+    #10b981 25%,
+    #38bdf8 50%,
+    #10b981 75%,
+    #059669 100%
+  );
+  background-size: 200% 100%;
+  box-shadow: 
+    0 1px 0 0 #047857,
+    0 3px 8px rgba(16, 185, 129, 0.45);
+  animation: liveBottom3D 2.6s ease-in-out infinite;
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Keyframes animating ONLY the bottom side to create a dynamic 3D depth effect */
+@keyframes liveBottom3D {
+  0% {
+    background-position: 0% 50%;
+    bottom: -3px;
+    height: 3px;
+    box-shadow: 
+      0 1px 0 0 #047857,
+      0 3px 8px rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    background-position: 100% 50%;
+    bottom: -4.5px;
+    height: 4.5px;
+    box-shadow: 
+      0 1.5px 0 0 #059669,
+      0 6px 14px rgba(56, 189, 248, 0.65);
+  }
+  100% {
+    background-position: 200% 50%;
+    bottom: -3px;
+    height: 3px;
+    box-shadow: 
+      0 1px 0 0 #047857,
+      0 3px 8px rgba(16, 185, 129, 0.4);
+  }
+}
+
+.project-btn-live:hover {
+  background: #1a1e22;
+  border-color: #434a52;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.project-btn-live:hover .live-btn-icon {
+  transform: scale(1.15);
+}
+
+.project-btn-live:hover::after {
+  bottom: -5px;
+  height: 5px;
+  box-shadow: 
+    0 1.5px 0 0 #059669,
+    0 7px 18px rgba(56, 189, 248, 0.75);
+}
+
+.project-btn-live:active {
+  transform: translateY(2.5px);
+}
+
+.project-btn-live:active::after {
+  bottom: -1px;
+  height: 1px;
+  box-shadow: 
+    0 0.5px 0 0 #047857,
+    0 1px 4px rgba(16, 185, 129, 0.3);
 }
 
 .project-desc {
