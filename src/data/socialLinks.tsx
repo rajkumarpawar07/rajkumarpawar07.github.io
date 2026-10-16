@@ -31,7 +31,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: 'X / Twitter',
-    url: 'https://x.com/Rajkuma83294456',
+    url: 'https://x.com/Rajkumarp07',
     icon: <FaXTwitter />,
     label: 'x',
   },

@@ -203,10 +203,10 @@ export const HeroSection: React.FC = () => {
             <p className="social-card-name">
               Rajkumar Pawar <FaCheckCircle className="verified-check" />
             </p>
-            <p className="social-card-sub">@Rajkuma83294456</p>
+            <p className="social-card-sub">@Rajkumap07</p>
           </div>
           <a
-            href="https://x.com/Rajkuma83294456"
+            href="https://x.com/Rajkumarp07"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline social-card-btn"

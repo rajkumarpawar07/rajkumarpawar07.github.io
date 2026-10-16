@@ -411,122 +411,169 @@
   gap: 8px;
 }
 
-.project-btn {
-  padding: 4px 9px;
-  font-size: 0.7rem;
+/* GitHub Icon-only Button */
+.project-btn-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background: #131517;
+  border: 1px solid #2a2d30;
+  color: #a1a1aa;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
 }
 
-/* Modern 3D Animated Live Button */
+.project-btn-github .github-icon {
+  font-size: 0.95rem;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+}
+
+.project-btn-github:hover {
+  background: #1c1f22;
+  border-color: #525860;
+  color: #ffffff;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.project-btn-github:hover .github-icon {
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+.project-btn-github:active {
+  transform: translateY(0);
+}
+
+/* Futuristic Glowing Live Button */
 .project-btn-live {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 4px 11px;
-  font-size: 0.7rem;
+  gap: 7px;
+  height: 28px;
+  padding: 0 11px;
+  font-size: 0.72rem;
   font-weight: 600;
-  color: #f4f4f5;
-  background: #141719;
-  border: 1px solid #30353a;
-  border-bottom: none;
+  letter-spacing: 0.02em;
+  color: #e4e4e7;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(6, 182, 212, 0.06) 100%);
+  border: 1px solid rgba(52, 211, 153, 0.35);
   border-radius: var(--radius-sm);
   cursor: pointer;
   text-decoration: none;
-  overflow: visible;
+  overflow: hidden;
   user-select: none;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.12s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(0);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
 }
 
-.project-btn-live .live-btn-icon {
-  font-size: 0.65rem;
-  color: #34d399;
-  transition: transform 0.2s ease;
-}
-
-/* 3D Animated Bottom Shelf */
-.project-btn-live::after {
+/* Diagonal Light Shimmer Sweep */
+.project-btn-live::before {
   content: '';
   position: absolute;
-  left: -1px;
-  right: -1px;
-  bottom: -3.5px;
-  height: 3.5px;
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
   background: linear-gradient(
     90deg,
-    #059669 0%,
-    #10b981 25%,
-    #38bdf8 50%,
-    #10b981 75%,
-    #059669 100%
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 100%
   );
-  background-size: 200% 100%;
-  box-shadow: 
-    0 1px 0 0 #047857,
-    0 3px 8px rgba(16, 185, 129, 0.45);
-  animation: liveBottom3D 2.6s ease-in-out infinite;
-  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: skewX(-22deg);
+  pointer-events: none;
 }
 
-/* Keyframes animating ONLY the bottom side to create a dynamic 3D depth effect */
-@keyframes liveBottom3D {
+.project-btn-live:hover::before {
+  animation: liveShimmerSweep 1.1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes liveShimmerSweep {
+  0% { left: -120%; }
+  100% { left: 220%; }
+}
+
+/* Live Pulse Radar Beacon */
+.live-pulse {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 8px;
+  height: 8px;
+}
+
+.live-pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.live-pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(16, 185, 129, 0.7);
+  animation: livePulseRadar 1.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes livePulseRadar {
   0% {
-    background-position: 0% 50%;
-    bottom: -3px;
-    height: 3px;
-    box-shadow: 
-      0 1px 0 0 #047857,
-      0 3px 8px rgba(16, 185, 129, 0.4);
+    transform: scale(0.9);
+    opacity: 0.9;
   }
-  50% {
-    background-position: 100% 50%;
-    bottom: -4.5px;
-    height: 4.5px;
-    box-shadow: 
-      0 1.5px 0 0 #059669,
-      0 6px 14px rgba(56, 189, 248, 0.65);
+  75% {
+    transform: scale(2.6);
+    opacity: 0;
   }
   100% {
-    background-position: 200% 50%;
-    bottom: -3px;
-    height: 3px;
-    box-shadow: 
-      0 1px 0 0 #047857,
-      0 3px 8px rgba(16, 185, 129, 0.4);
+    transform: scale(2.6);
+    opacity: 0;
   }
+}
+
+.live-label {
+  display: inline-block;
+  line-height: 1;
+}
+
+.project-btn-live .live-icon {
+  font-size: 0.62rem;
+  color: #34d399;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
 }
 
 .project-btn-live:hover {
-  background: #1a1e22;
-  border-color: #434a52;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.22) 0%, rgba(6, 182, 212, 0.16) 100%);
+  border-color: rgba(52, 211, 153, 0.75);
   color: #ffffff;
-  transform: translateY(-1px);
+  transform: translateY(-1.5px);
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35), 0 0 24px rgba(6, 182, 212, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
-.project-btn-live:hover .live-btn-icon {
-  transform: scale(1.15);
-}
-
-.project-btn-live:hover::after {
-  bottom: -5px;
-  height: 5px;
-  box-shadow: 
-    0 1.5px 0 0 #059669,
-    0 7px 18px rgba(56, 189, 248, 0.75);
+.project-btn-live:hover .live-icon {
+  color: #ffffff;
+  transform: translate(2px, -2px);
 }
 
 .project-btn-live:active {
-  transform: translateY(2.5px);
-}
-
-.project-btn-live:active::after {
-  bottom: -1px;
-  height: 1px;
-  box-shadow: 
-    0 0.5px 0 0 #047857,
-    0 1px 4px rgba(16, 185, 129, 0.3);
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
 }
 
 .project-desc {

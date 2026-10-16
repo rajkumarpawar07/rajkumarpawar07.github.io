@@ -1,4 +1,4 @@
-export type MockupKind = 'search' | 'logo' | 'gradient' | 'blog' | 'game' | 'AI' | 'ML' | 'player' | 'chat' | 'map' | 'shop';
+export type MockupKind = 'search' | 'logo' | 'gradient' | 'blog' | 'game' | 'AI' | 'ML' | 'player' | 'chat' | 'map' | 'shop' | 'Cloud';
 
 export interface ProjectData {
   name: string;
@@ -13,7 +13,17 @@ export interface ProjectData {
   image?: string;
 }
 
-export const featuredProjects: ProjectData[] = [
+export const allProjects: ProjectData[] = [
+  {
+    name: 'Google Cloud Quizes',
+    desc: 'Solve real-style scenario questions with instant validation, track your progress, and ask Google Gemini.',
+    tech: ['TypeScript', 'Firebase', 'Node.js', 'Next.js', 'React'],
+    github: 'https://github.com/rajkumarpawar07/clever-cloud-quizzes',
+    live: 'https://google-cloud-questions.vercel.app/',
+    badge: 'Google Cloud ☁️',
+    mockup: 'Cloud',
+    image: '/images/projects/gcp_quizes.png',
+  },
   {
     name: 'ModelPulse',
     desc: 'AI API Change Intelligence platform watching 15 vendor changelogs daily with self-healing scrapers.',
@@ -23,24 +33,6 @@ export const featuredProjects: ProjectData[] = [
     badge: 'AI Intelligence ✨',
     mockup: 'AI',
     image: '/images/projects/modelpulse.png',
-  },
-  {
-    name: 'Playflex',
-    desc: 'Feature-rich app offering information of movies and shows with AI voice control, real-time sentiment analysis.',
-    tech: ['Alan AI', 'NLP', 'Machine Learning', 'Sentiment Analysis', 'Flutter', 'Fask', ],
-    github: 'https://github.com/rajkumarpawar07/playflex-video-streaming-flutter-application',
-    badge: 'Machine Learning 🧠',
-    mockup: 'ML',
-    image: '/images/projects/playflex.png',
-  },
-  {
-    name: 'RAG Architectures',
-    desc: 'AI Engineer - Building RAG architectures to make AI agents more reliable, accurate, and trustworthy.',
-    tech: ['Python', 'Architecural patterns', 'Vector DBs (PostgreSQL, Pinecone)'],
-    github: 'https://github.com/rajkumarpawar07/rag-architectures',
-    badge: 'AI Engineering ⚙️',
-    mockup: 'AI',
-    image: '/images/projects/rag-architectures.jpg',
   },
   {
     name: 'Bigga',
@@ -60,6 +52,25 @@ export const featuredProjects: ProjectData[] = [
     mockup: 'AI',
     image: '/images/projects/searchmagnet.png',
   },
+  {
+    name: 'Playflex',
+    desc: 'Feature-rich app offering information of movies and shows with AI voice control, real-time sentiment analysis.',
+    tech: ['Alan AI', 'NLP', 'Machine Learning', 'Sentiment Analysis', 'Flutter', 'Flask'],
+    github: 'https://github.com/rajkumarpawar07/playflex-video-streaming-flutter-application',
+    badge: 'Machine Learning 🧠',
+    mockup: 'ML',
+    image: '/images/projects/playflex.png',
+  },
+  {
+    name: 'RAG Architectures',
+    desc: 'AI Engineer - Building RAG architectures to make AI agents more reliable, accurate, and trustworthy.',
+    tech: ['Python', 'Architecural patterns', 'Vector DBs (PostgreSQL, Pinecone)'],
+    github: 'https://github.com/rajkumarpawar07/rag-architectures',
+    badge: 'AI Engineering ⚙️',
+    mockup: 'AI',
+    image: '/images/projects/rag-architectures.jpg',
+  },
 ];
 
-export const allProjects: ProjectData[] = [...featuredProjects];
+// Top 5 projects displayed in the Home tab
+export const featuredProjects: ProjectData[] = allProjects.slice(0, 5);

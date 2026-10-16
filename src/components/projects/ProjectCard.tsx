@@ -134,12 +134,30 @@ export const ProjectCard: React.FC<ProjectData> = ({
 
           <div className="project-actions">
             {live && (
-              <a href={live} target="_blank" rel="noopener noreferrer" className="project-btn project-btn-live">
-                <FaExternalLinkAlt className="live-btn-icon" /> Live
+              <a
+                href={live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-btn-live"
+                title={`Visit ${name} Live`}
+              >
+                <span className="live-pulse">
+                  <span className="live-pulse-dot" />
+                  <span className="live-pulse-ring" />
+                </span>
+                <span className="live-label">Live</span>
+                <FaExternalLinkAlt className="live-icon" />
               </a>
             )}
-            <a href={github} target="_blank" rel="noopener noreferrer" className="btn-outline project-btn">
-              <FaGithub /> GitHub
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn-github"
+              title={`View ${name} on GitHub`}
+              aria-label={`View ${name} on GitHub`}
+            >
+              <FaGithub className="github-icon" />
             </a>
           </div>
         </div>
