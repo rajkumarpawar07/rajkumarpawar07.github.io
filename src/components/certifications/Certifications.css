@@ -1,3 +1,23 @@
+.certs-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.certs-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.certs-group-label {
+  color: var(--text-muted);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .certs-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -11,12 +31,21 @@
   gap: 10px;
   padding: 11px;
   color: var(--text-primary);
-  transition: border-color 0.18s ease, background 0.18s ease;
 }
 
-.cert-card:hover {
-  border-color: var(--border-dashed-hover);
-  background: rgba(255, 255, 255, 0.015);
+/* Subtle gold/amber accent for Professional & Expert credentials */
+.cert-card.expert-tier {
+  border-color: rgba(245, 158, 11, 0.3);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 158, 11, 0.05) 0%,
+    rgba(245, 158, 11, 0.015) 45%,
+    rgba(245, 158, 11, 0) 100%
+  );
+}
+
+.cert-card.expert-tier:hover {
+  border-color: rgba(245, 158, 11, 0.5);
 }
 
 .cert-icon-box {
