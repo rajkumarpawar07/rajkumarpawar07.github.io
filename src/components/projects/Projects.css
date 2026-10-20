@@ -60,7 +60,10 @@
   color: #3f3f46;
 }
 
-/* A single slow sheen across the frame on hover. */
+/* A single sheen sweep, fired on enter only.
+   It is an animation rather than a transition on purpose: when the pointer
+   leaves, the animation is simply dropped and the sheen snaps back to its
+   off-screen rest position instead of replaying in reverse. */
 .project-media-sheen {
   position: absolute;
   inset: 0;
@@ -72,11 +75,19 @@
     transparent 62%
   );
   transform: translateX(-110%);
-  transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover .project-media-sheen {
-  transform: translateX(110%);
+  animation: projectSheenSweep 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes projectSheenSweep {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(110%);
+  }
 }
 
 /* ---- Content ---- */
