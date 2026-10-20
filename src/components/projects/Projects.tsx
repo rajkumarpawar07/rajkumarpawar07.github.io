@@ -12,7 +12,7 @@ export const Projects: React.FC = () => {
       <SectionTitle>My Projects</SectionTitle>
 
       <div className="projects-grid">
-        {featuredProjects.slice(0, 5).map((project, idx) => (
+        {featuredProjects.map((project, idx) => (
           <ProjectCard key={idx} {...project} />
         ))}
       </div>
