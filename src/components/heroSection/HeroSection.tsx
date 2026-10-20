@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaExternalLinkAlt, FaCheckCircle, FaLinkedin, FaMapMarkerAlt, FaBriefcase, FaCog } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaCheckCircle, FaLinkedin, FaMapMarkerAlt, FaGlobe, FaBriefcase, FaCog } from 'react-icons/fa';
 import { FaXTwitter, FaYoutube, FaPuzzlePiece } from 'react-icons/fa6';
 import { userImages } from '../../data/images';
 import ContactMe from '../contactMe/ContactMe';
@@ -170,7 +170,7 @@ export const HeroSection: React.FC = () => {
             </a>
             <span className="meta-divider" aria-hidden="true"></span>
             <span className="hero-location">
-              <FaMapMarkerAlt className="location-icon" aria-hidden="true" />
+              <FaGlobe className="location-icon" aria-hidden="true" />
               India
             </span>
             <span className="meta-sep" aria-hidden="true">·</span>
