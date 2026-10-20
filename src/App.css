@@ -16,6 +16,9 @@
   --amber: #f59e0b;
   --orange: #fb923c;
 
+  /* Cream-gold accent — carried over from the removed @handle */
+  --accent-amber: #e0c67e;
+
   --container-max-width: 700px;
   --container-padding: 18px;
 

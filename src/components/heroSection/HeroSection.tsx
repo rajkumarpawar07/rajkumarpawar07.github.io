@@ -154,7 +154,6 @@ export const HeroSection: React.FC = () => {
           <h1 className="hero-name">
             Rajkumar Pawar <span className="hero-emoji" aria-hidden="true">✦</span>
           </h1>
-          <p className="hero-handle">@rajkumarpawar07</p>
           <div className="hero-meta-row">
             <a
               href={CLOUDQUIZZES_REPO}
