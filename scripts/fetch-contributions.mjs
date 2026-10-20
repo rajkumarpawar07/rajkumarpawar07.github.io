@@ -110,6 +110,16 @@ async function main() {
     leetcode: snapshot.leetcode ?? previous.leetcode ?? null,
   };
 
+  // Leave the file untouched when the data is unchanged, so a rebuild does
+  // not dirty the working tree for no reason.
+  const same =
+    JSON.stringify(merged.github) === JSON.stringify(previous.github ?? null) &&
+    JSON.stringify(merged.leetcode) === JSON.stringify(previous.leetcode ?? null);
+  if (same) {
+    console.log('[contributions] snapshot unchanged');
+    return;
+  }
+
   writeFileSync(OUT_FILE, JSON.stringify(merged));
   console.log(`[contributions] wrote ${OUT_FILE}`);
   if (problems.length) console.warn(`[contributions] partial snapshot (${problems.join('; ')})`);
