@@ -79,7 +79,6 @@ export const ProjectCard: React.FC<ProjectData> = ({
         <p className="project-desc">{desc}</p>
 
         <div className="project-tech">
-          <p className="tech-label">Built with</p>
           <ul className="tech-tags">
             {tech.map((item) => (
               <li key={item} className="tech-tag">
