@@ -174,32 +174,33 @@ export const HeroSection: React.FC = () => {
             <span className="meta-sep" aria-hidden="true">·</span>
             <span className="hero-clock">{clock}</span>
           </div>
+
+          <ul className="hero-bio">
+            <li>
+              <FaBriefcase className="bio-icon" aria-hidden="true" />
+              <span>
+                Hi, I am an{' '}
+                <strong className="bio-highlight">AI Engineer &amp; Cloud Architect</strong>{' '}
+                building intelligent systems.
+              </span>
+            </li>
+            <li>
+              <FaCog className="bio-icon" aria-hidden="true" />
+              <span>
+                <strong>Software Engineer</strong> at <strong>Accenture</strong> working on{' '}
+                <strong>Google Cloud, DevOps, and Agentic AI</strong>.
+              </span>
+            </li>
+            <li>
+              <FaPuzzlePiece className="bio-icon" aria-hidden="true" />
+              <span>
+                I do my best work in{' '}
+                <strong>Go, Python, Kubernetes, GCP, Terraform, and Agentic AI</strong>.
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
-
-      <ul className="hero-bio">
-        <li>
-          <FaBriefcase className="bio-icon" aria-hidden="true" />
-          <span>
-            Hi, I am an <strong>AI Engineer &amp; Cloud Architect</strong> building intelligent
-            systems.
-          </span>
-        </li>
-        <li>
-          <FaCog className="bio-icon" aria-hidden="true" />
-          <span>
-            <strong>Software Engineer</strong> at <strong>Accenture</strong> working on{' '}
-            <strong>Google Cloud, DevOps, and Agentic AI</strong>.
-          </span>
-        </li>
-        <li>
-          <FaPuzzlePiece className="bio-icon" aria-hidden="true" />
-          <span>
-            I do my best work in{' '}
-            <strong>Go, Python, Kubernetes, GCP, Terraform, and Agentic AI</strong>.
-          </span>
-        </li>
-      </ul>
 
       <div className="hero-divider" aria-hidden="true"></div>
 
