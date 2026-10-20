@@ -5,7 +5,7 @@ import { userImages } from '../../data/images';
 import ContactMe from '../contactMe/ContactMe';
 import './HeroSection.css';
 
-const CLOUDQUIZZES_REPO = 'https://github.com/rajkumarpawar07/clever-cloud-quizzes';
+const CLOUDQUIZZES_URL = 'https://google-cloud-questions.vercel.app/';
 
 function useIndiaClock(): string {
   const [time, setTime] = useState<string>(() =>
@@ -154,7 +154,7 @@ export const HeroSection: React.FC = () => {
           </h1>
           <div className="hero-meta-row">
             <a
-              href={CLOUDQUIZZES_REPO}
+              href={CLOUDQUIZZES_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hero-status-link"
@@ -180,8 +180,8 @@ export const HeroSection: React.FC = () => {
               <FaBriefcase className="bio-icon" aria-hidden="true" />
               <span>
                 Hi, I am an{' '}
-                <strong className="bio-highlight">AI Engineer &amp; Cloud Architect</strong>{' '}
-                building intelligent systems.
+                <strong className="bio-highlight">Software Engineer &amp; Cloud Architect.</strong>{' '}
+              
               </span>
             </li>
             <li>
