@@ -190,14 +190,14 @@ export const HeroSection: React.FC = () => {
               <FaCog className="bio-icon" aria-hidden="true" />
               <span>
                 <strong>Software Engineer</strong> at <strong>Accenture</strong> working on{' '}
-                <strong>Google Cloud, DevOps, and Agentic AI</strong>.
+                <strong>Agentic AI, GCP and DevOps</strong>.
               </span>
             </li>
             <li>
               <FaPuzzlePiece className="bio-icon" aria-hidden="true" />
               <span>
                 I do my best work in{' '}
-                <strong>Go, Python, Kubernetes, GCP, Terraform, and Agentic AI</strong>.
+                <strong>Python, Typescript, Go and Kubernetes</strong>.
               </span>
             </li>
           </ul>
