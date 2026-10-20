@@ -1,4 +1,5 @@
 import React from 'react';
+import HeroCadBackdrop from '../../components/heroCadBackdrop/HeroCadBackdrop';
 import HeroSection from '../../components/heroSection/HeroSection';
 import SkillSection from '../../components/skillSection/SkillSection';
 import Experience from '../../components/experience/Experience';
@@ -10,16 +11,19 @@ import Footer from '../../components/footer/Footer';
 
 export const Home: React.FC = () => {
   return (
-    <div className="app-container">
-      <HeroSection />
-      <SkillSection />
-      <Experience />
-      <Projects />
-      <OpenSourceSection />
-      <Calendar />
-      <CertificationsSection />
-      <Footer />
-    </div>
+    <>
+      <HeroCadBackdrop />
+      <div className="app-container">
+        <HeroSection />
+        <SkillSection />
+        <Experience />
+        <Projects />
+        <OpenSourceSection />
+        <Calendar />
+        <CertificationsSection />
+        <Footer />
+      </div>
+    </>
   );
 };
 

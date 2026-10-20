@@ -1,0 +1,24 @@
+/*
+ * HeroCadBackdrop — flat-shaded architectural CAD schematic behind the hero.
+ * Anchored to the document top so it scrolls away with the header.
+ * Sits behind all content (negative z-index) and never intercepts pointer
+ * events.
+ */
+
+.hero-cad-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.hero-cad-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
