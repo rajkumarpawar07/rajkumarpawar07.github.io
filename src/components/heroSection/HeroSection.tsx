@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaExternalLinkAlt, FaCheckCircle, FaLinkedin, FaMapMarkerAlt, FaGlobe, FaBriefcase, FaCog } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaCheckCircle, FaLinkedin, FaMapMarkerAlt, FaBriefcase, FaCog } from 'react-icons/fa';
 import { FaXTwitter, FaYoutube, FaPuzzlePiece } from 'react-icons/fa6';
 import { userImages } from '../../data/images';
 import ContactMe from '../contactMe/ContactMe';
@@ -161,13 +161,16 @@ export const HeroSection: React.FC = () => {
               rel="noopener noreferrer"
               className="hero-status-link"
             >
-              <FaMapMarkerAlt className="meta-icon" aria-hidden="true" />
+              <span className="hero-live" aria-hidden="true">
+                <span className="hero-live-dot" />
+                <span className="hero-live-ring" />
+              </span>
               <span>Building CloudQuizzes</span>
               <FaExternalLinkAlt className="hero-status-icon" aria-hidden="true" />
             </a>
             <span className="meta-divider" aria-hidden="true"></span>
             <span className="hero-location">
-              <FaGlobe className="location-icon" aria-hidden="true" />
+              <FaMapMarkerAlt className="location-icon" aria-hidden="true" />
               India
             </span>
             <span className="meta-sep" aria-hidden="true">·</span>
