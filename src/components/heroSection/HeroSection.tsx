@@ -89,13 +89,14 @@ export const HeroSection: React.FC = () => {
     video.muted = true;
     video.playsInline = true;
 
+    // Only hand over to the video once it is genuinely playing. Firing on
+    // loadeddata/canplay hides the portrait while the first frame is still
+    // pending, which shows visitors an empty box on a slow connection.
     const handleReady = () => {
       setVideoReady(true);
     };
 
     video.addEventListener('playing', handleReady);
-    video.addEventListener('loadeddata', handleReady);
-    video.addEventListener('canplay', handleReady);
 
     const playPromise = video.play();
     if (playPromise !== undefined) {
@@ -104,18 +105,17 @@ export const HeroSection: React.FC = () => {
           setVideoReady(true);
         })
         .catch(() => {
-          setVideoReady(true);
+          // Autoplay refused: keep the static portrait on screen.
+          setVideoReady(false);
         });
     }
 
-    if (video.readyState >= 2 || video.currentTime > 0) {
+    if (playPromise === undefined && (video.readyState >= 2 || video.currentTime > 0)) {
       setVideoReady(true);
     }
 
     return () => {
       video.removeEventListener('playing', handleReady);
-      video.removeEventListener('loadeddata', handleReady);
-      video.removeEventListener('canplay', handleReady);
     };
   }, [videoSrc]);
 
@@ -141,9 +141,7 @@ export const HeroSection: React.FC = () => {
                 muted
                 playsInline
                 preload="auto"
-                onCanPlay={() => setVideoReady(true)}
-                onLoadedData={() => setVideoReady(true)}
-                onPlay={() => setVideoReady(true)}
+                onPlaying={() => setVideoReady(true)}
                 onError={() => setVideoUnavailable(true)}
               />
             )}
