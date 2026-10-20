@@ -93,14 +93,45 @@
 .hero-status-link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
+  font-size: 0.78rem;
   color: var(--text-primary);
+  transition: color 0.15s ease;
 }
 
-.hero-meta {
+.hero-status-link:hover {
+  color: #ffffff;
+}
+
+.hero-status-link .hero-status-icon {
+  transition: transform 0.15s ease;
+}
+
+.hero-status-link:hover .hero-status-icon {
+  transform: translate(1px, -1px);
+}
+
+/* Unified meta row: build link | location | live IST clock */
+.hero-meta-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.meta-icon {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.meta-divider {
+  width: 1px;
+  height: 13px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.hero-clock {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -128,8 +159,9 @@
 }
 
 .hero-bio li {
-  position: relative;
-  padding-left: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
   font-size: 0.82rem;
   line-height: 1.55;
   color: var(--text-secondary);
@@ -140,15 +172,11 @@
   font-weight: 600;
 }
 
-.bio-dot {
-  position: absolute;
-  left: 2px;
-  top: 9px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--text-muted);
+.bio-icon {
+  font-size: 0.76rem;
+  color: var(--text-muted);
   flex-shrink: 0;
+  margin-top: 4px;
 }
 
 .hero-divider {
@@ -276,11 +304,11 @@
   }
 
   .hero-handle,
-  .hero-status {
+  .hero-status-link {
     font-size: 0.72rem;
   }
 
-  .hero-meta {
+  .hero-clock {
     font-size: 0.66rem;
   }
 

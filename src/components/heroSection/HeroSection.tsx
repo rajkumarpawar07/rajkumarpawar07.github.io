@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaExternalLinkAlt, FaCheckCircle, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
-import { FaXTwitter, FaYoutube } from 'react-icons/fa6';
+import { FaExternalLinkAlt, FaCheckCircle, FaLinkedin, FaMapMarkerAlt, FaGlobe, FaBriefcase, FaCog } from 'react-icons/fa';
+import { FaXTwitter, FaYoutube, FaPuzzlePiece } from 'react-icons/fa6';
 import { userImages } from '../../data/images';
 import ContactMe from '../contactMe/ContactMe';
 import './HeroSection.css';
+
+const CLOUDQUIZZES_REPO = 'https://github.com/rajkumarpawar07/clever-cloud-quizzes';
 
 function useIndiaClock(): string {
   const [time, setTime] = useState<string>(() =>
@@ -153,42 +155,49 @@ export const HeroSection: React.FC = () => {
             Rajkumar Pawar <span className="hero-emoji" aria-hidden="true">✦</span>
           </h1>
           <p className="hero-handle">@rajkumarpawar07</p>
-          <p className="hero-status">
-            Building{' '}
+          <div className="hero-meta-row">
             <a
-              href="https://github.com/rajkumarpawar07"
+              href={CLOUDQUIZZES_REPO}
               target="_blank"
               rel="noopener noreferrer"
               className="hero-status-link"
             >
-              <strong>here</strong>{' '}
-              <FaExternalLinkAlt className="hero-status-icon" />
+              <FaMapMarkerAlt className="meta-icon" aria-hidden="true" />
+              <span>Building CloudQuizzes</span>
+              <FaExternalLinkAlt className="hero-status-icon" aria-hidden="true" />
             </a>
-          </p>
-          <p className="hero-meta">
+            <span className="meta-divider" aria-hidden="true"></span>
             <span className="hero-location">
-              <FaMapMarkerAlt className="location-icon" /> India
+              <FaGlobe className="location-icon" aria-hidden="true" />
+              India
             </span>
-            <span className="meta-sep">·</span>
-            <span>◷ {clock}</span>
-          </p>
+            <span className="meta-sep" aria-hidden="true">·</span>
+            <span className="hero-clock">{clock}</span>
+          </div>
         </div>
       </div>
 
       <ul className="hero-bio">
         <li>
-          <span className="bio-dot" aria-hidden="true"></span>
-          Hi, I am an <strong>AI Engineer building intelligent systems</strong>.
+          <FaBriefcase className="bio-icon" aria-hidden="true" />
+          <span>
+            Hi, I am an <strong>AI Engineer &amp; Cloud Architect</strong> building intelligent
+            systems.
+          </span>
         </li>
         <li>
-          <span className="bio-dot" aria-hidden="true"></span>
-          <strong>Software Engineer</strong> at <strong>Accenture</strong> working on{' '}
-          <strong>Google Cloud, DevOps, Agentic AI</strong>.
+          <FaCog className="bio-icon" aria-hidden="true" />
+          <span>
+            <strong>Software Engineer</strong> at <strong>Accenture</strong> working on{' '}
+            <strong>Google Cloud, DevOps, and Agentic AI</strong>.
+          </span>
         </li>
         <li>
-          <span className="bio-dot" aria-hidden="true"></span>
-          I do my best work in <strong>AI, ML, Python, Go</strong> and{' '}
-          <strong>Kubernetes</strong>.
+          <FaPuzzlePiece className="bio-icon" aria-hidden="true" />
+          <span>
+            I do my best work in{' '}
+            <strong>Go, Python, Kubernetes, GCP, Terraform, and Agentic AI</strong>.
+          </span>
         </li>
       </ul>
 
