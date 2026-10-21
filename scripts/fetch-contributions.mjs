@@ -27,47 +27,109 @@ const HEADERS = {
 };
 
 async function fetchLeetcode() {
-  const url =
-    'https://leetcode.com/graphql?query=' +
-    encodeURIComponent(LEETCODE_QUERY) +
-    '&variables=' +
-    encodeURIComponent(JSON.stringify({ username: LEETCODE_USERNAME }));
+  // 1. Direct GraphQL
+  try {
+    const url =
+      'https://leetcode.com/graphql?query=' +
+      encodeURIComponent(LEETCODE_QUERY) +
+      '&variables=' +
+      encodeURIComponent(JSON.stringify({ username: LEETCODE_USERNAME }));
 
-  const res = await fetch(url, { headers: HEADERS });
-  if (!res.ok) throw new Error(`LeetCode responded ${res.status}`);
+    const res = await fetch(url, { headers: HEADERS });
+    if (res.ok) {
+      const json = await res.json();
+      const raw = json?.data?.matchedUser?.submissionCalendar;
+      if (raw) {
+        const calendar = JSON.parse(raw);
+        const days = Object.entries(calendar)
+          .map(([timestamp, count]) => ({
+            date: new Date(Number(timestamp) * 1000).toISOString().slice(0, 10),
+            count: Number(count),
+          }))
+          .filter((day) => Number.isFinite(day.count))
+          .sort((a, b) => a.date.localeCompare(b.date));
 
-  const json = await res.json();
-  const raw = json?.data?.matchedUser?.submissionCalendar;
-  if (!raw) throw new Error('LeetCode returned no submission calendar');
+        if (days.length) return days;
+      }
+    }
+  } catch (err) {
+    console.warn(`[contributions] LeetCode direct query failed (${err.message}), trying fallback...`);
+  }
 
-  const calendar = JSON.parse(raw);
-  const days = Object.entries(calendar)
-    .map(([timestamp, count]) => ({
-      date: new Date(Number(timestamp) * 1000).toISOString().slice(0, 10),
-      count: Number(count),
-    }))
-    .filter((day) => Number.isFinite(day.count))
-    .sort((a, b) => a.date.localeCompare(b.date));
+  // 2. Fallback: alfa-leetcode-api
+  try {
+    const res = await fetch(`https://alfa-leetcode-api.onrender.com/${LEETCODE_USERNAME}/calendar`, {
+      headers: HEADERS,
+    });
+    if (res.ok) {
+      const json = await res.json();
+      const raw =
+        typeof json.submissionCalendar === 'string'
+          ? JSON.parse(json.submissionCalendar)
+          : json.submissionCalendar;
+      if (raw) {
+        const days = Object.entries(raw)
+          .map(([timestamp, count]) => ({
+            date: new Date(Number(timestamp) * 1000).toISOString().slice(0, 10),
+            count: Number(count),
+          }))
+          .filter((day) => Number.isFinite(day.count))
+          .sort((a, b) => a.date.localeCompare(b.date));
 
-  if (!days.length) throw new Error('LeetCode calendar was empty');
-  return days;
+        if (days.length) return days;
+      }
+    }
+  } catch (err) {
+    console.warn(`[contributions] LeetCode alfa fallback failed (${err.message})`);
+  }
+
+  throw new Error('LeetCode calendar could not be retrieved');
 }
 
 async function fetchGithub() {
-  const res = await fetch(`${GITHUB_API}${GITHUB_USERNAME}?y=last`, { headers: HEADERS });
-  if (!res.ok) throw new Error(`GitHub API responded ${res.status}`);
+  // 1. Primary: jogruber.de
+  try {
+    const res = await fetch(`${GITHUB_API}${GITHUB_USERNAME}?y=last`, { headers: HEADERS });
+    if (res.ok) {
+      const json = await res.json();
+      const raw = json?.contributions ?? json?.years?.[0]?.contributions ?? [];
+      if (raw.length) {
+        return raw
+          .map((entry) => ({
+            date: entry.date,
+            count: Number(entry.count) || 0,
+            level: Number(entry.level) || 0,
+          }))
+          .sort((a, b) => a.date.localeCompare(b.date));
+      }
+    }
+  } catch (err) {
+    console.warn(`[contributions] GitHub primary failed (${err.message}), trying backup...`);
+  }
 
-  const json = await res.json();
-  const raw = json?.contributions ?? json?.years?.[0]?.contributions ?? [];
-  if (!raw.length) throw new Error('GitHub API returned no contributions');
+  // 2. Backup: vercel
+  try {
+    const res = await fetch(`https://github-contributions.vercel.app/api/v1/${GITHUB_USERNAME}`, {
+      headers: HEADERS,
+    });
+    if (res.ok) {
+      const json = await res.json();
+      const raw = json?.contributions ?? [];
+      if (raw.length) {
+        return raw
+          .map((entry) => ({
+            date: entry.date,
+            count: Number(entry.count) || 0,
+            level: Number(entry.level) || 0,
+          }))
+          .sort((a, b) => a.date.localeCompare(b.date));
+      }
+    }
+  } catch (err) {
+    console.warn(`[contributions] GitHub vercel backup failed (${err.message})`);
+  }
 
-  return raw
-    .map((entry) => ({
-      date: entry.date,
-      count: Number(entry.count) || 0,
-      level: Number(entry.level) || 0,
-    }))
-    .sort((a, b) => a.date.localeCompare(b.date));
+  throw new Error('GitHub contributions could not be retrieved');
 }
 
 async function main() {
